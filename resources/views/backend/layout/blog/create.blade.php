@@ -4,6 +4,11 @@
     <br>
     <br>
     <div class="container">
+        @if (session('success'))
+            <div class="mt-3 alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         @if (session('error'))
             <div class="alert alert-success">
                 {{ session('error') }}
@@ -11,13 +16,13 @@
         @endif
         <div class="row">
             <div class="col-xl">
-                <div class="card mb-4">
+                <div class="mb-4 card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Create New Sports Blog</h5>
                         <small class="text-muted float-end">Sports Blog</small>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('blog.create') }}" method="POST" enctype="multiupart/form-data">
+                        <form action="{{ route('blog.create') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Sports Type</label>
@@ -67,7 +72,8 @@
                             @enderror
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-message">Description</label>
-                                <textarea id="description" name="description" class="form-control form-control-lg" placeholder="Description"></textarea>
+                                <textarea id="description" style="height:400px;" name="description" class="form-control form-control-lg"
+                                    placeholder="Description"></textarea>
                             </div>
                             @error('description')
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
@@ -76,8 +82,8 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Photo</label>
-                                <input type="file" class="form-control" id="basic-default-fullname" name="image[]"
-                                    placeholder="Upload Photo" multiple />
+                                <input type="file" class="form-control dropify" id="basic-default-fullname"
+                                    name="image" placeholder="Upload Photo" />
                             </div>
                             @error('image')
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
@@ -99,6 +105,13 @@
                 .catch(error => {
                     console.error(error);
                 });
+        </script>
+
+
+        <script>
+            $(document).ready(function() {
+                $('.dropify').dropify();
+            });
         </script>
     @endpush
 @endsection

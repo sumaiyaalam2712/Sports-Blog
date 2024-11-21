@@ -18,6 +18,15 @@
         </a>
     </li>
 
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Score Card</span></li>
+    <!-- Cards -->
+    <li class="menu-item">
+        <a href="{{ route('score.create') }}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Create Score Card</div>
+        </a>
+    </li>
+
 
 
 </ul>

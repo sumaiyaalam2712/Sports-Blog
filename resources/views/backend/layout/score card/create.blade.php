@@ -4,6 +4,11 @@
     <br>
     <br>
     <div class="container">
+        @if (session('success'))
+            <div class="mt-3 alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         @if (session('error'))
             <div class="alert alert-success">
                 {{ session('error') }}
@@ -11,13 +16,13 @@
         @endif
         <div class="row">
             <div class="col-xl">
-                <div class="card mb-4">
+                <div class="mb-4 card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Create Match Highlights</h5>
                         <small class="text-muted float-end">Score Card</small>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('score.create') }}" method="POST" enctype="multiupart/form-data">
+                        <form action="{{ route('score.create') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Sports Type</label>
@@ -70,8 +75,8 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Team-1 Logo</label>
-                                <input type="text" class="form-control" id="basic-default-fullname" name="team1_logo"
-                                    placeholder="Team-1 Logo" />
+                                <input type="file" class="form-control dropify" id="basic-default-fullname"
+                                    name="team1_logo" placeholder="Team-1 Logo" />
                             </div>
                             @error('team1_logo')
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
@@ -79,8 +84,8 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Team-2 Logo</label>
-                                <input type="text" class="form-control" id="basic-default-fullname" name="team2_logo"
-                                    placeholder="Team-2 Logo" />
+                                <input type="file" class="form-control dropify" id="basic-default-fullname"
+                                    name="team2_logo" placeholder="Team-2 Logo" />
                             </div>
                             @error('team2_logo')
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
@@ -114,4 +119,11 @@
 
         </div>
     </div>
+    @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $('.dropify').dropify();
+            });
+        </script>
+    @endpush
 @endsection
