@@ -14,117 +14,45 @@
             </div>
             <div class="score-card-wrapper owl-carousel owl-theme ">
                 <!-- first score card -->
-                @foreach ($values as $value)
+                @foreach ($scores as $score)
                     <div class="single-score-card item">
                         <div class="score-time-venue">
-                            <p>{{ $value['play_date'] }}</p>
-                            <p>SCORE</p>
+                            <p>{{ $score['sports_type'] }}</p>
+                            <p>{{ $score['play_date'] }}</p>
                         </div>
                         <div class="score-card-result-wrapper">
                             <div class="team-one">
                                 <div class="team-logo-score">
                                     <div class="team-logo">
-                                        <img src="{{ asset('backend/' . $value['team1_logo']) }}" alt=""
+                                        <img src="{{ asset('backend/' . $score['team1_logo']) }}" alt=""
                                             srcset="">
                                     </div>
-                                    <p class="team-name">{{ $value['team1_name'] }}</p>
+                                    <p class="team-name">{{ $score['team1_name'] }}</p>
 
                                 </div>
                                 <p class="final-scorecard">
-                                    {{ $value['team1_score'] }}
+                                    {{ $score['team1_score'] }}
                                 </p>
                             </div>
                             <div class="team-two">
                                 <div class="team-logo-score">
                                     <div class="team-logo">
-                                        <img src="{{ asset('backend/' . $value['team2_logo']) }}" alt=""
+                                        <img src="{{ asset('backend/' . $score['team2_logo']) }}" alt=""
                                             srcset="">
                                     </div>
-                                    <p class="team-name">{{ $value['team2_name'] }}</p>
+                                    <p class="team-name">{{ $score['team2_name'] }}</p>
 
                                 </div>
                                 <p class="final-scorecard">
-                                    {{ $value['team2_score'] }}
+                                    {{ $score['team2_score'] }}
                                 </p>
                             </div>
                         </div>
-                        <p>{{ $value['winner'] }}</p>
+                        <p>{{ $score['winner'] }}</p>
                     </div>
                 @endforeach
                 <!-- second score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- third score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- fourth score card -->
 
 
@@ -169,11 +97,11 @@
                                 <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                     href="#">Subscribe Now</a>
                                 <!-- <div class="card-gap-line"></div>
-                                <div class="plan-point">
-                                  <li>Support the writers </li>
-                                  <li>Watch Premium contents </li>
-                                  <li>Adds Free Blog Contents</li>
-                                </div> -->
+                                                                                        <div class="plan-point">
+                                                                                          <li>Support the writers </li>
+                                                                                          <li>Watch Premium contents </li>
+                                                                                          <li>Adds Free Blog Contents</li>
+                                                                                        </div> -->
                             </div>
                             <!-- plan card two -->
                             <div class="plan-card">
@@ -189,11 +117,11 @@
                                 <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                     href="#">Subscribe Now</a>
                                 <!-- <div class="card-gap-line"></div>
-                                <div class="plan-point">
-                                  <li>Support the writers </li>
-                                  <li>Watch Premium contents </li>
-                                  <li>Adds Free Blog Contents</li>
-                                </div> -->
+                                                                                        <div class="plan-point">
+                                                                                          <li>Support the writers </li>
+                                                                                          <li>Watch Premium contents </li>
+                                                                                          <li>Adds Free Blog Contents</li>
+                                                                                        </div> -->
                             </div>
                         </div>
                     </div>
@@ -208,34 +136,29 @@
             <div class="top-headline-content-wrapper">
                 <div class="top-headline-first headline-box" data-aos="fade-right" data-aos-duration="1000">
                     <!-- event card  one -->
-                    <a href="blog-details.html" class="event-card">
-                        <div class="event-img">
-                            <img src="assets/images/player-1.png" alt="">
-                        </div>
-                        <p class="event-name">NBA</p>
-                        <h2 class="common-heading">
-                            NBA free agency 2024: Reaction and grades for the biggest
-                        </h2>
-                    </a>
+                    @foreach ($toptwo as $top2)
+                        <a href="blog-details.html" class="event-card">
+                            <div class="event-img">
+                                <img src="#" alt="">
+                            </div>
+                            <p class="event-name">NBA</p>
+                            <h2 class="common-heading">
+                                {{ $top2['headline'] }}
+                            </h2>
+                        </a>
+                    @endforeach
                     <!-- event card  two -->
-                    <a href="blog-details.html" class="event-card">
-                        <div class="event-img">
-                            <img src="assets/images/player-2.png" alt="">
-                        </div>
-                        <p class="event-name">NBA</p>
-                        <h2 class="common-heading">
-                            Every NBA player expected to compete in Olympics </h2>
-                    </a>
+
                 </div>
                 <div class="top-headline-middle headline-box" data-aos="fade-up" data-aos-duration="1000">
                     <!-- event card  big -->
                     <a href="blog-details.html" class="event-card-2">
                         <div class="event-img event-img-big">
-                            <img src="assets/images/player-3.png" alt="">
+                            <img src="{{ asset('backend/' . $top1['image']) }}" alt="">
                         </div>
                         <p class="event-name">NBA</p>
                         <h2 class="common-heading common-heading-2">
-                            2025 NBA Draft Big Board 📝 </h2>
+                            {{ $top1['headline'] }} 📝 </h2>
                     </a>
                 </div>
                 <div class="top-headline-last headline-box" data-aos="fade-left" data-aos-duration="1000">
@@ -247,43 +170,17 @@
                         </div>
                         <div class="top-headlines-wrapper">
                             <!-- headline one -->
-                            <div class="top-headline">
-                                <a href="blog-details.html" class="common-heading">
-                                    NBA free agency 2024: Reaction and grades for the biggest
-                                </a>
-                            </div>
-                            <div class="heading-gap-line"></div>
+                            @foreach ($tops as $top)
+                                <div class="top-headline">
+                                    <a href="#" class="common-heading">
+                                        {{ $top['headline'] }}
+                                    </a>
+                                </div>
+                                <div class="heading-gap-line"></div>
+                            @endforeach
 
                             <!-- headline two -->
-                            <div class="top-headline">
-                                <a href="blog-details.html" class="common-heading">
-                                    USA escapes Germany in final showcase
-                                </a>
-                            </div>
-                            <div class="heading-gap-line"></div>
 
-                            <!-- headline three -->
-                            <div class="top-headline">
-                                <a href="blog-details.html" class="common-heading">
-                                    5 takeaways: USA goes 5-0 in exhibitions
-                                </a>
-                            </div>
-                            <div class="heading-gap-line"></div>
-
-                            <!-- headline four -->
-                            <div class="top-headline">
-                                <a href="blog-details.html" class="common-heading">
-                                    George ready to help 76ers take next step
-                                </a>
-                            </div>
-                            <div class="heading-gap-line"></div>
-
-                            <!-- headline five -->
-                            <div class="top-headline">
-                                <a href="blog-details.html" class="common-heading">
-                                    Summer Standouts: Christopher delivers
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -302,6 +199,7 @@
                         </h3>
                     </div>
                     <div class="headline-card-wrapper">
+
                         <!-- first card -->
                         <div class="headline-single-card">
                             <div class="heading-card-img">
@@ -319,57 +217,9 @@
                                 <a href="#" class="common-card-link"> Read More</a>
                             </div>
                         </div>
+
                         <!-- second card -->
-                        <div class="headline-single-card">
-                            <div class="heading-card-img">
-                                <img src="assets/images/singlr-player-2.png" alt="">
-                            </div>
-                            <div class="headline-card-details">
-                                <h3 class="card-common-h3">
-                                    California Classic: Warriours Cruse Past Lakers
-                                </h3>
-                                <p class="common-card-para">
-                                    Ethan Thompson leads Golden State with 22 points and 11 rebounds, while Bronny James
-                                    sits with a left
-                                    knee injury. Ethan Thompson tallies 22 points.
-                                </p>
-                                <a href="#" class="common-card-link"> Read More</a>
-                            </div>
-                        </div>
-                        <!-- third card -->
-                        <div class="headline-single-card">
-                            <div class="heading-card-img">
-                                <img src="assets/images/singlr-player-3.png" alt="">
-                            </div>
-                            <div class="headline-card-details">
-                                <h3 class="card-common-h3">
-                                    2024 California Classic Summer League: Mason Jones
-                                </h3>
-                                <p class="common-card-para">
-                                    Bryce McGowens scores a game-high 20 points and Jake Stephens adds 14 points off the
-                                    bench as
-                                    Charlotte improves to 2-0 in Summer League play.
-                                </p>
-                                <a href="#" class="common-card-link"> Read More</a>
-                            </div>
-                        </div>
-                        <!-- fourth card -->
-                        <div class="headline-single-card">
-                            <div class="heading-card-img">
-                                <img src="assets/images/singlr-player-4.png" alt="">
-                            </div>
-                            <div class="headline-card-details">
-                                <h3 class="card-common-h3">
-                                    Standout players from Day 1 of California Classic
-                                </h3>
-                                <p class="common-card-para">
-                                    Golden State gets a tag-team effort against Miami while Adonis Arms lifts Sacramento
-                                    over Bronny James
-                                    and Los Angeles. A deep reserve last season for Toronto.
-                                </p>
-                                <a href="#" class="common-card-link"> Read More</a>
-                            </div>
-                        </div>
+
                         <a class="load-more-btn" href="#">Load More</a>
                     </div>
                 </div>
