@@ -14,42 +14,43 @@
             </div>
             <div class="score-card-wrapper owl-carousel owl-theme ">
                 <!-- first score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
+                @foreach ($values as $value)
+                    <div class="single-score-card item">
+                        <div class="score-time-venue">
+                            <p>{{ $value['play_date'] }}</p>
+                            <p>SCORE</p>
+                        </div>
+                        <div class="score-card-result-wrapper">
+                            <div class="team-one">
+                                <div class="team-logo-score">
+                                    <div class="team-logo">
+                                        <img src="{{ asset('backend/' . $value['team1_logo']) }}" alt=""
+                                            srcset="">
+                                    </div>
+                                    <p class="team-name">{{ $value['team1_name'] }}</p>
+
                                 </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
+                                <p class="final-scorecard">
+                                    {{ $value['team1_score'] }}
                                 </p>
                             </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
+                            <div class="team-two">
+                                <div class="team-logo-score">
+                                    <div class="team-logo">
+                                        <img src="{{ asset('backend/' . $value['team2_logo']) }}" alt=""
+                                            srcset="">
+                                    </div>
+                                    <p class="team-name">{{ $value['team2_name'] }}</p>
+
                                 </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
+                                <p class="final-scorecard">
+                                    {{ $value['team2_score'] }}
                                 </p>
                             </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
                         </div>
+                        <p>{{ $value['winner'] }}</p>
                     </div>
-                </div>
+                @endforeach
                 <!-- second score card -->
                 <div class="single-score-card item">
                     <div class="score-time-venue">
@@ -125,231 +126,12 @@
                     </div>
                 </div>
                 <!-- fourth score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- fifth score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- sixth score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- seventh score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- eight score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- nine score card -->
-                <div class="single-score-card item">
-                    <div class="score-time-venue">
-                        <p>10:35 AM</p>
-                        <p>BSMV</p>
-                    </div>
-                    <div class="score-card-result-wrapper">
-                        <div class="team-one">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-1.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                        <div class="team-two">
-                            <div class="team-logo-score">
-                                <div class="team-logo">
-                                    <img src="assets/images/team-logo-2.png" alt="" srcset="">
-                                </div>
-                                <p class="team-name">MCU</p>
-                                <p class="total-score">
-                                    (44-41)
-                                </p>
-                            </div>
-                            <p class="final-scorecard">
-                                -120
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+
+            </div>
             </div>
             <div class="visible pagination-space pag-right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
                         d="M8.90991 19.9201L15.4299 13.4001C16.1999 12.6301 16.1999 11.3701 15.4299 10.6001L8.90991 4.08008"
                         stroke="#FAFAFA" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
@@ -387,11 +169,11 @@
                                 <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                     href="#">Subscribe Now</a>
                                 <!-- <div class="card-gap-line"></div>
-                    <div class="plan-point">
-                      <li>Support the writers </li>
-                      <li>Watch Premium contents </li>
-                      <li>Adds Free Blog Contents</li>
-                    </div> -->
+                                <div class="plan-point">
+                                  <li>Support the writers </li>
+                                  <li>Watch Premium contents </li>
+                                  <li>Adds Free Blog Contents</li>
+                                </div> -->
                             </div>
                             <!-- plan card two -->
                             <div class="plan-card">
@@ -407,11 +189,11 @@
                                 <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                     href="#">Subscribe Now</a>
                                 <!-- <div class="card-gap-line"></div>
-                    <div class="plan-point">
-                      <li>Support the writers </li>
-                      <li>Watch Premium contents </li>
-                      <li>Adds Free Blog Contents</li>
-                    </div> -->
+                                <div class="plan-point">
+                                  <li>Support the writers </li>
+                                  <li>Watch Premium contents </li>
+                                  <li>Adds Free Blog Contents</li>
+                                </div> -->
                             </div>
                         </div>
                     </div>
