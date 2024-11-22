@@ -23,8 +23,7 @@ class BlogController extends Controller
         'headline'=>'required',
         'sub_headline'=>'required',
         //'slug'=>'unique:blogs,slug',
-        'description'=>'required',
-        'image'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp'],
+        'description'=>'required'],
         ['required'=>'Fill with valid information']
     );
 
@@ -35,12 +34,13 @@ class BlogController extends Controller
     $data->sub_headline=$request->sub_headline;
     $data->slug=Str::slug($request->headline);
     $data->description=$request->description;
-
-
-    $imageName = time().'.'.$request->image->extension();
-    $request->image->move(public_path('backend'), $imageName);
-    $data->image=$imageName;
-
+    $multiple=[];
+foreach($request->image as $value){
+    $imageName = time().'.'.$value->extension();
+    $value->move(public_path('backend'), $imageName);
+    $multiple[]=$imageName;
+}
+$data->image= json_encode( $multiple);
     $data->creation_period=Carbon::now();
     $data->save();
     //session()->flash('success','Form Submission is done');

@@ -3,14 +3,15 @@
         <div class="nav-wrapper">
             <div class="nav-left">
                 <a class="nav-logo">
-                    <img src="assets/images/logo.png" alt="" srcset="">
+                    <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" srcset="">
                 </a>
                 <div class="nav-search-area desktop-searcbar">
                     <div class="nav-search-input-field">
                         <form action="#">
                             <input type="text" name="search" class="bg-nav-black">
                             <div class="nav-search-icon">
-                                <img src="assets/images/search-normal.svg" alt="" srcset="">
+                                <img src="{{ asset('frontend/assets/images/search-normal.svg') }}" alt=""
+                                    srcset="">
                             </div>
                         </form>
                     </div>
@@ -18,7 +19,7 @@
             </div>
             <div class="nav-right">
                 <div class="mobile-search-bar">
-                    <img src="assets/images/search-normal-mobile.svg" alt="Search Icon">
+                    <img src="{{ asset('frontend/assets/images/search-normal-mobile.svg') }}" alt="Search Icon">
                     <!-- Search bar mobile popup -->
                     <div class="hidden nav-search-area mobile-search-popup">
                         <div class="mobile-search-showing-div">

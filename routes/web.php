@@ -33,7 +33,7 @@ Route::post('/create-score', [ScoreController::class,'create'])->name('score.cre
 
 
 Route::get('/', [IndexController::class,'index'])->name('home.index');
-Route::get('/blog-details', [BlogDetailsController::class,'index'])->name('blog.details.index');
+    Route::get('/blog-details/{id}', [BlogDetailsController::class,'index'])->name('blog.details.index');
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::get('/register', [SignUpController::class, 'index'])->name('register');
 

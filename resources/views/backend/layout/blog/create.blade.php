@@ -82,8 +82,8 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Photo</label>
-                                <input type="file" class="form-control dropify" id="basic-default-fullname"
-                                    name="image" placeholder="Upload Photo" />
+                                <input type="file" class="form-control" id="basic-default-fullname" name="image[]"
+                                    placeholder="Upload Photo" multiple />
                             </div>
                             @error('image')
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>

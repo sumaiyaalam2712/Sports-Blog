@@ -97,11 +97,11 @@
                                 <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                     href="#">Subscribe Now</a>
                                 <!-- <div class="card-gap-line"></div>
-                                                                                        <div class="plan-point">
-                                                                                          <li>Support the writers </li>
-                                                                                          <li>Watch Premium contents </li>
-                                                                                          <li>Adds Free Blog Contents</li>
-                                                                                        </div> -->
+                                                                                                                                                <div class="plan-point">
+                                                                                                                                                  <li>Support the writers </li>
+                                                                                                                                                  <li>Watch Premium contents </li>
+                                                                                                                                                  <li>Adds Free Blog Contents</li>
+                                                                                                                                                </div> -->
                             </div>
                             <!-- plan card two -->
                             <div class="plan-card">
@@ -117,11 +117,11 @@
                                 <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                     href="#">Subscribe Now</a>
                                 <!-- <div class="card-gap-line"></div>
-                                                                                        <div class="plan-point">
-                                                                                          <li>Support the writers </li>
-                                                                                          <li>Watch Premium contents </li>
-                                                                                          <li>Adds Free Blog Contents</li>
-                                                                                        </div> -->
+                                                                                                                                                <div class="plan-point">
+                                                                                                                                                  <li>Support the writers </li>
+                                                                                                                                                  <li>Watch Premium contents </li>
+                                                                                                                                                  <li>Adds Free Blog Contents</li>
+                                                                                                                                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -195,32 +195,31 @@
                 <div class="heading-area">
                     <div class="common-banner">
                         <h3 class="common-heading-two">
-                            Top Headline
+                            Top Headlines
                         </h3>
                     </div>
                     <div class="headline-card-wrapper">
-
-                        <!-- first card -->
-                        <div class="headline-single-card">
-                            <div class="heading-card-img">
-                                <img src="{{ asset('backend/assets/images/singlr-player-1.png') }}" alt="">
+                        @foreach ($all_newses as $all_news)
+                            <!-- first card -->
+                            <div class="headline-single-card">
+                                <div class="heading-card-img">
+                                    <img src="{{ asset('backend/assets/images/singlr-player-1.png') }}" alt="">
+                                </div>
+                                <div class="headline-card-details">
+                                    <h3 class="card-common-h3">
+                                        {{ $all_news['headline'] }}
+                                    </h3>
+                                    <p class="common-card-para">
+                                        {!! $all_news['semi_headline'] !!}
+                                    </p>
+                                    <a href="{{ route('blog.details.index', $all_news->id) }}" class="common-card-link">
+                                        Read More</a>
+                                </div>
                             </div>
-                            <div class="headline-card-details">
-                                <h3 class="card-common-h3">
-                                    2024 California Classic Summer League
-                                </h3>
-                                <p class="common-card-para">
-                                    Bryce McGowens scores a game-high 20 points and Jake Stephens adds 14 points off the
-                                    bench as
-                                    Charlotte improves to 2-0 in Summer League play.
-                                </p>
-                                <a href="#" class="common-card-link"> Read More</a>
-                            </div>
-                        </div>
-
+                        @endforeach
                         <!-- second card -->
 
-                        <a class="load-more-btn" href="#">Load More</a>
+                        <div style="text-align:center">{{ $all_newses->links() }}</div>
                     </div>
                 </div>
                 <div class="fetured-area">
@@ -230,18 +229,14 @@
                         </h3>
                     </div>
                     <div class="fetured-content-wrapper">
-                        <a href="blog-details.html" class="featured-content">
-                            <div class="fetured-img">
-                                <img src="assets/images/featured-1.png" alt="">
-                            </div>
-                            <p>Betnijah Laney-Hamilton (New York Liberty)</p>
-                        </a>
-                        <a href="blog-details.html" class="featured-content">
-                            <div class="fetured-img">
-                                <img src="assets/images/featured-2.png" alt="">
-                            </div>
-                            <p>Betnijah Laney-Hamilton (New York Liberty)</p>
-                        </a>
+                        @foreach ($features as $feature)
+                            <a href="blog-details.html" class="featured-content">
+                                <div class="fetured-img">
+                                    <img src="assets/images/featured-1.png" alt="">
+                                </div>
+                                <p>{{ $feature['headline'] }}</p>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -272,54 +267,28 @@
                         </svg>
                     </a>
                     <a href="#" class="common-heading-2 common-heading tranfer-responsive-font">
-                        Reacting to Cade's $224M Deal 💰
+                        {{ $transfer1['headline'] }}
                     </a>
                 </div>
                 <div class="transfer-news-wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
                     <div class="transfer-news">
-                        <div class="transfer-left">
-                            <!-- tranfer content-1 -->
+
+                        <!-- tranfer content-1 -->
+                        @foreach ($transfertwo as $transfer2)
                             <a href="blog-details.html" class="transfer-content">
                                 <div class="tranfer-img">
                                     <img src="assets/images/transfer-1.png" alt="">
                                 </div>
                                 <a href="#" class="common-heading">
-                                    NBA free agency 2024: Reaction and grades for the biggest
+                                    {{ $transfer2['headline'] }}
                                 </a>
                             </a>
                             <!-- tranfer content-2 -->
-                            <a href="blog-details.html" class="transfer-content">
-                                <div class="tranfer-img">
-                                    <img src="assets/images/transfer-2.png" alt="">
-                                </div>
-                                <a href="#" class="common-heading">
-                                    NBA free agency 2024: Reaction and grades for the biggest
-                                </a>
-                            </a>
-                        </div>
-                        <div class="transfer-right">
-                            <!-- tranfer content-1 -->
-                            <a href="blog-details.html" class="transfer-content">
-                                <div class="tranfer-img">
-                                    <img src="assets/images/transfer-3.png" alt="">
-                                </div>
-                                <a href="#" class="common-heading">
-                                    NBA free agency 2024: Reaction and grades for the biggest
-                                </a>
-                            </a>
-                            <!-- tranfer content-2 -->
-                            <a href="blog-details.html" class="transfer-content">
-                                <div class="tranfer-img">
-                                    <img src="assets/images/transfer-4.png" alt="">
-                                </div>
-                                <a href="#" class="common-heading">
-                                    NBA free agency 2024: Reaction and grades for the biggest
-                                </a>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
+
         </section>
         <!-- transfer news section End -->
     </main>

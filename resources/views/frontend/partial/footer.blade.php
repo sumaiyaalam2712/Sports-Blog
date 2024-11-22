@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-content-wrapper">
             <a class="nav-logo" href="index.html">
-                <img src="assets/images/logo.png" alt="" srcset="">
+                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" srcset="">
             </a>
             <p class="notice">
                 Newsletter Coming Soon...
