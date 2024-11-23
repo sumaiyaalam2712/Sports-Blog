@@ -26,8 +26,8 @@ class ScoreController extends Controller
         'team2_name'=>'required|string|min:3|max:30',
         'team1_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
         'team2_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
-        'team1_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|min:200|max:3072',
-        'team2_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|min:200|max:3072',
+        'team1_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp',
+        'team2_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp',
         'winner'=>'required|string|min:3|max:30',
         'play_date'=>'required|date'],
         ['required'=>'Fill with valid information']

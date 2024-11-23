@@ -87,6 +87,7 @@ if($request->package_name=='For 6 Months' && $request->package_category=='6 Mont
     $data->package_saving=$request->package_saving;
     $data->save();
     session()->flash('success', 'Form Submission is done successfully!');
+
 }
 elseif($request->package_name=='For 6 Months' && !$request->package_category=='6 Months' && !$request->package_duration==180)
 {
@@ -112,7 +113,6 @@ elseif($request->package_name=='Annually' && !$request->package_category=='year'
 
 session()->flash('success', 'The package values are not matching with each other');
 }
-
 
 
 
