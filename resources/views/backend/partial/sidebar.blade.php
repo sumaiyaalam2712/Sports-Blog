@@ -29,4 +29,26 @@
 
 
 
+
+    <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">SubsCription</span>
+    </li>
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Subscription Category">Subscription Category</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('subscription.category.index') }}" class="menu-link">
+                    <div data-i18n="Add Subscription Category">ADD Subscription Category</div>
+                </a>
+            </li>
+
+
+
+        </ul>
+    </li>
+
+
 </ul>

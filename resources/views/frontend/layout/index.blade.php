@@ -83,50 +83,46 @@
                         <h3>Gain unlimited access to our exclusive contents</h3>
                         <div class="plan-card-wrapper">
                             <!-- plan card one -->
-                            <div class="plan-card">
-                                <div class="plan-card-img">
-                                    <img src="assets/images/plan-card-1.png" alt="">
+                            @foreach ($subscriptions as $subscription)
+                                <div class="plan-card">
+                                    <div class="plan-card-img">
+                                        <img src="{{ asset('frontend/assets/images/plan-card-1.png') }}" alt="">
+                                    </div>
+                                    <h4>Subscribe {{ $subscription['package_name'] }} </h4>
+                                    <!-- <p class="covarage">get unapologetic coverage for </p> -->
+                                    <p class="monthly-price">${{ $subscription['rate'] }}
+                                        USD/{{ $subscription['package_category'] }}
+                                        @if ($subscription['package_saving'])
+                                            (saving{{ $subscription['package_saving'] }})
+                                        @endif
+                                    </p>
+
+                                    <p class="plan-card-para">
+                                        {!! $subscription['description'] !!}
+                                    </p>
+                                    <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                                        href="#">Subscribe Now</a>
+                                    <!-- <div class="card-gap-line"></div>
+                                                                                                                                                                                <div class="plan-point">
+                                                                                                                                                                                  <li>Support the writers </li>
+                                                                                                                                                                                  <li>Watch Premium contents </li>
+                                                                                                                                                                                  <li>Adds Free Blog Contents</li>
+                                                                                                                                                                                </div> -->
                                 </div>
-                                <h4>Subscribe Monthly </h4>
-                                <!-- <p class="covarage">get unapologetic coverage for </p> -->
-                                <p class="monthly-price">$2 USD/month</p>
-                                <p class="plan-card-para">
-                                    Join the Unapologetic Sports Community for the best coverage of Florida High School
-                                    sports.
-                                </p>
-                                <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                                    href="#">Subscribe Now</a>
-                                <!-- <div class="card-gap-line"></div>
-                                                                                                                                                <div class="plan-point">
-                                                                                                                                                  <li>Support the writers </li>
-                                                                                                                                                  <li>Watch Premium contents </li>
-                                                                                                                                                  <li>Adds Free Blog Contents</li>
-                                                                                                                                                </div> -->
-                            </div>
+                            @endforeach
                             <!-- plan card two -->
-                            <div class="plan-card">
-                                <div class="plan-card-img">
-                                    <img src="assets/images/plan-card-2.png" alt="">
-                                </div>
-                                <h4>Annual Plan <span>(20% Off)</span></h4>
-                                <p class="monthly-price">$19.20 USD/year</p>
-                                <p class="plan-card-para">
-                                    Join the Unapologetic Sports Community for the best coverage of Florida High School
-                                    sports.
-                                </p>
-                                <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                                    href="#">Subscribe Now</a>
-                                <!-- <div class="card-gap-line"></div>
-                                                                                                                                                <div class="plan-point">
-                                                                                                                                                  <li>Support the writers </li>
-                                                                                                                                                  <li>Watch Premium contents </li>
-                                                                                                                                                  <li>Adds Free Blog Contents</li>
-                                                                                                                                                </div> -->
-                            </div>
+
+                            <!-- <div class="card-gap-line"></div>
+                                                                                                                                                                                <div class="plan-point">
+                                                                                                                                                                                  <li>Support the writers </li>
+                                                                                                                                                                                  <li>Watch Premium contents </li>
+                                                                                                                                                                                  <li>Adds Free Blog Contents</li>
+                                                                                                                                                                                </div> -->
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <!-- banner area ends -->

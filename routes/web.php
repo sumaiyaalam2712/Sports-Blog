@@ -31,6 +31,7 @@ Route::get('/create-blog', [BlogController::class,'index'])->name('blog.index');
 Route::post('/create-blog', [BlogController::class,'create'])->name('blog.create');
 Route::get('/create-score', [ScoreController::class,'index'])->name('score.index');
 Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');
+Route::get('/score', [ScoreController::class,'display'])->name('score.display');
 Route::get('/create-subscription-category', [SubscriptionCategoryController::class,'index'])->name('subscription.category.index');
 Route::post('/create-subscription-category', [SubscriptionCategoryController::class,'create'])->name('subscription.category.create');
 

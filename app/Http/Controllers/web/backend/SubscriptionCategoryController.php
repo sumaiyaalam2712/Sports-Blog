@@ -20,12 +20,12 @@ class SubscriptionCategoryController extends Controller
     public function create(Request $request)
    {
     $request->validate(
-        ['package_name'=>'required',
-        'package_category'=>'required',
-        'package_duration'=>'required',
+        ['package_name'=>'required|in:Monthly,For 3 Months,For 6 Months,Annually',
+        'package_category'=>'required|in:Month,3 Months,6 Months,year',
+        'package_duration'=>'required|in:30,90,180,365',
         'description'=>'required',
-        'rate'=>'required',
-        'package_saving'=>'required'
+        'rate'=>'required|min:2',
+        'package_saving'=>'nullable|string'
 
     ],
         ['required'=>'Fill with valid information']

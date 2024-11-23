@@ -5,6 +5,7 @@ namespace App\Http\Controllers\web\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ScoreCard;
+use Yajra\DataTables\Facades\DataTables;
 
 class ScoreController extends Controller
 {
@@ -15,19 +16,20 @@ class ScoreController extends Controller
 
 
 
+
+
     public function create(Request $request)
    {
     $request->validate(
-        ['sports_type'=>'required',
-        'team1_name'=>'required',
-        'team2_name'=>'required',
+        ['sports_type'=>'required|string|min:4|max:30',
+        'team1_name'=>'required|string|min:3|max:30',
+        'team2_name'=>'required|string|min:3|max:30',
         'team1_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
         'team2_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
-        'team1_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp',
-        'team2_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp',
-        'winner'=>'required',
-        'play_date'=>'required|date'
-    ],
+        'team1_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|min:200|max:3072',
+        'team2_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|min:200|max:3072',
+        'winner'=>'required|string|min:3|max:30',
+        'play_date'=>'required|date'],
         ['required'=>'Fill with valid information']
     );
 
@@ -57,4 +59,46 @@ class ScoreController extends Controller
     return redirect()->back();
 
    }
+
+
+
+
+
+
+
+
+   public function display(Request $request)
+
+    {
+
+        if ($request->ajax()) {
+
+            $data = ScoreCard::all();
+
+            return Datatables::of($data)
+
+                    ->addIndexColumn()
+
+                    ->addColumn('action', function($row){
+
+
+
+                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+
+
+
+                            return $btn;
+
+                    })
+
+                    ->rawColumns(['action'])
+
+                    ->make(true);
+
+        }
+
+
+
+        return view('backend.layout.score card.display');
+}
 }
