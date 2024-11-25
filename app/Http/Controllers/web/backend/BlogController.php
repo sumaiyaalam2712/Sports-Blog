@@ -18,8 +18,8 @@ class BlogController extends Controller
    public function create(Request $request)
    {
     $request->validate(
-        ['sports_type'=>'required|string|min:4|max:30',
-        'news_type'=>'required|in:general,top,featured,transfer news|min:3|max:10',
+        ['sports_type'=>'required|string|min:4',
+        'news_type'=>'required|in:general,top,featured,transfer news|min:3',
         'headline'=>'required|min:4|max:200',
         'sub_headline'=>'required|min:4|max:200',
         'slug'=>'unique:blogs,slug',

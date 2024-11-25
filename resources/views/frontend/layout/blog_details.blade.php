@@ -25,7 +25,12 @@
 
                         @foreach ($detail_image as $detailss_image)
                             <div class="blog-feture-img">
-                                <img src="{{ asset('backend/' . $detailss_image[0]) }}" alt="">
+                                @if (count($detailss_image) > 0)
+                                    <img src="{{ asset('backend/' . $detailss_image[0]) }}" alt="">
+                                @else
+                                    <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image">
+                                @endif
+
                             </div>
                         @endforeach
 
@@ -35,7 +40,11 @@
                         <br>
                         @foreach ($detail_image as $detailss_image)
                             <div class="blog-feture-img">
-                                <img src="{{ asset('backend/' . $detailss_image[1]) }}" alt="">
+                                @if (count($detailss_image) > 1)
+                                    <img src="{{ asset('backend/' . $detailss_image[1]) }}" alt="">
+                                @else
+                                    <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image">
+                                @endif
                             </div>
                         @endforeach
                     </div>

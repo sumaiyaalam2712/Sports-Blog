@@ -2,7 +2,7 @@
     <header class="bg-nav-black">
         <div class="nav-wrapper">
             <div class="nav-left">
-                <a class="nav-logo">
+                <a href="{{ route('home.index') }}" class="nav-logo">
                     <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" srcset="">
                 </a>
                 <div class="nav-search-area desktop-searcbar">
@@ -42,6 +42,14 @@
                             <a href="{{ route('login') }}">Log In</a>
                             <div class="line-div"></div>
                             <a href="{{ route('register') }}">Sign Up</a>
+                            <div class="line-div"></div>
+                            <a href="{{ route('logout') }}" class="hum_log-out_btn"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa-light fa-power-off"></i> Log Out
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>
