@@ -10,6 +10,7 @@ use App\Http\Controllers\web\frontend\LoginController;
 use App\Http\Controllers\web\frontend\BlogDetailsController;
 use App\Http\Controllers\web\frontend\SignUpController;
 use App\Http\Controllers\web\backend\SubscriptionCategoryController;
+use App\Http\Controllers\web\backend\SocialMediaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,11 @@ Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['aut
 Route::get('/create-blog', [BlogController::class,'index'])->name('blog.index');
 Route::post('/create-blog', [BlogController::class,'create'])->name('blog.create');
 Route::get('/create-score', [ScoreController::class,'index'])->name('score.index');
+
+Route::get('/create-social-media', [SocialMediaController::class,'index'])->name('social.media.index');
+Route::post('/create-social-media', [SocialMediaController::class,'create'])->name('social.media.create');
+
+
 Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');
 Route::get('/score', [ScoreController::class,'display'])->name('score.display');
 Route::get('/create-subscription-category', [SubscriptionCategoryController::class,'index'])->name('subscription.category.index');

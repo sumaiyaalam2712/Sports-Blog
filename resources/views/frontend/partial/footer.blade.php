@@ -8,9 +8,11 @@
                 Newsletter Coming Soon...
             </p>
             <div class="social-media-wrapper">
-                <a href="#"><img src="assets/images/facebook.png" alt=""></a>
-                <a href="#"><img src="assets/images/twitter.png" alt=""></a>
-                <a href="#"><img src="assets/images/instagram.png" alt=""></a>
+                @foreach ($social_medias as $social_media)
+                    <a href="{{ url($social_media['link']) }}"><img
+                            src="{{ asset('backend/' . $social_media['logo']) }}" class="img-thumbnail" height="50px"
+                            width="50px" alt=""></a>
+                @endforeach
             </div>
             <h4 class="right-reserved">
                 © 2024 Unapologeticsports All Rights Reserved

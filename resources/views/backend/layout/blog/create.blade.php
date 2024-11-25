@@ -34,7 +34,9 @@
                                     <option value="Cricket">Cricket</option>
                                 </select>
                                 @error('sports_type')
-                                    <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
+                                    <div class="invalid-feedback" style="color:darkslateblue,font-weight:bold;">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
 
