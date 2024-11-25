@@ -103,21 +103,21 @@
                                     <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                         href="#">Subscribe Now</a>
                                     <!-- <div class="card-gap-line"></div>
-                                                                                                                                                                                <div class="plan-point">
-                                                                                                                                                                                  <li>Support the writers </li>
-                                                                                                                                                                                  <li>Watch Premium contents </li>
-                                                                                                                                                                                  <li>Adds Free Blog Contents</li>
-                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                        <div class="plan-point">
+                                                                                                                                                                                                                                                                                                                          <li>Support the writers </li>
+                                                                                                                                                                                                                                                                                                                          <li>Watch Premium contents </li>
+                                                                                                                                                                                                                                                                                                                          <li>Adds Free Blog Contents</li>
+                                                                                                                                                                                                                                                                                                                        </div> -->
                                 </div>
                             @endforeach
                             <!-- plan card two -->
 
                             <!-- <div class="card-gap-line"></div>
-                                                                                                                                                                                <div class="plan-point">
-                                                                                                                                                                                  <li>Support the writers </li>
-                                                                                                                                                                                  <li>Watch Premium contents </li>
-                                                                                                                                                                                  <li>Adds Free Blog Contents</li>
-                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                        <div class="plan-point">
+                                                                                                                                                                                                                                                                                                                          <li>Support the writers </li>
+                                                                                                                                                                                                                                                                                                                          <li>Watch Premium contents </li>
+                                                                                                                                                                                                                                                                                                                          <li>Adds Free Blog Contents</li>
+                                                                                                                                                                                                                                                                                                                        </div> -->
                         </div>
                     </div>
                 </div>
@@ -149,9 +149,13 @@
                 <div class="top-headline-middle headline-box" data-aos="fade-up" data-aos-duration="1000">
                     <!-- event card  big -->
                     <a href="blog-details.html" class="event-card-2">
-                        <div class="event-img event-img-big">
-                            <img src="{{ asset('backend/' . $top1['image']) }}" alt="">
-                        </div>
+
+                        @foreach ($a as $b)
+                            <div class="event-img event-img-big">
+                                <img src="{{ asset('backend/' . $b[0]) }}" alt="">
+                            </div>
+                        @endforeach
+
                         <p class="event-name">NBA</p>
                         <h2 class="common-heading common-heading-2">
                             {{ $top1['headline'] }} 📝 </h2>
@@ -183,7 +187,9 @@
             </div>
         </section>
         <!-- top headline End -->
+        <br>
 
+        <br>
         <!-- Second headline and feature start -->
         <section class="second-heading-section common-padding">
             <div class="second-heading-content-wrapper" data-aos="fade-up" data-aos-duration="1000"
@@ -199,8 +205,9 @@
                             <!-- first card -->
                             <div class="headline-single-card">
                                 <div class="heading-card-img">
-                                    <img src="{{ asset('backend/assets/images/singlr-player-1.png') }}" alt="">
+                                    <img src="assets/images/singlr-player-3.png" alt="">
                                 </div>
+
                                 <div class="headline-card-details">
                                     <h3 class="card-common-h3">
                                         {{ $all_news['headline'] }}
@@ -213,6 +220,7 @@
                                 </div>
                             </div>
                         @endforeach
+
                         <!-- second card -->
 
                         <div style="text-align:center">{{ $all_newses->links() }}</div>

@@ -12,12 +12,7 @@
                     <h2>{{ $detail['sub_headline'] }}</h2>
                     <div class="blog-author-time">
                         <div class="blog-author">
-                            <div class="blog-author-img">
-                                <img src="assets/images/post-author.png" alt="">
-                            </div>
-                            <p class="blog-author-name">
-                                Peter Parker
-                            </p>
+
                         </div>
                         <div class="blog-post-time">
                             <p>{{ $detail->creation_period }}</p>
@@ -27,16 +22,22 @@
                 <div class="blog-mainpost-relatedpost">
                     <!-- blog-mai-post area -->
                     <div class="blog-main-post">
-                        <div class="blog-feture-img">
-                            <img src="assets/images/blog-feature-main.png" alt="">
-                        </div>
-                        <p class="blog-img-moment">
-                            First paired in 2011, Stephen Curry and Klay Thompson went on to become the most potent
-                            shooting backcourt in NBA history.
-                        </p>
+
+                        @foreach ($detail_image as $detailss_image)
+                            <div class="blog-feture-img">
+                                <img src="{{ asset('backend/' . $detailss_image[0]) }}" alt="">
+                            </div>
+                        @endforeach
+
                         <p class="blog-post-details">
                             {!! $detail['description'] !!}
                         </p>
+                        <br>
+                        @foreach ($detail_image as $detailss_image)
+                            <div class="blog-feture-img">
+                                <img src="{{ asset('backend/' . $detailss_image[1]) }}" alt="">
+                            </div>
+                        @endforeach
                     </div>
                     <!-- related-post-area -->
                     <div class="related-blog-wrapper" data-aos="fade-left" data-aos-duration="1000">

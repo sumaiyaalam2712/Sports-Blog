@@ -12,6 +12,7 @@ class BlogDetailsController extends Controller
     {
 
         $details=Blog::find($id);
-      return view('frontend.layout.blog_details',['detail'=>$details]);
+        $details_image=array(explode(',',$details->image));
+      return view('frontend.layout.blog_details',['detail'=>$details,'detail_image'=>$details_image]);
     }
 }
