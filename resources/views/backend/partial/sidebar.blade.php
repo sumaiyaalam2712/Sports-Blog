@@ -65,35 +65,54 @@
                     <div data-i18n="Update Profile">Update Profile</div>
                 </a>
             </li>
-
-
-
-        </ul>
     </li>
+</ul>
+</li>
+
+<li class="menu-header small text-uppercase">
+    <span class="menu-header-text">Admin</span>
+</li>
+<li class="menu-item">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Admin">Admin</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="{{ route('admin.index') }}" class="menu-link">
+                <div data-i18n="Create Admin">Create Admin</div>
+            </a>
+        </li>
+
+
+
+
+    </ul>
+</li>
 
 
 
 
 
-    <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Social Media Info</span>
-    </li>
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Social Media">Social Media</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="{{ route('social.media.index') }}" class="menu-link">
-                    <div data-i18n="Add Social Media Info">Add Social Media Info</div>
-                </a>
-            </li>
+<li class="menu-header small text-uppercase">
+    <span class="menu-header-text">Social Media Info</span>
+</li>
+<li class="menu-item">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Social Media">Social Media</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="{{ route('social.media.index') }}" class="menu-link">
+                <div data-i18n="Add Social Media Info">Add Social Media Info</div>
+            </a>
+        </li>
 
 
 
-        </ul>
-    </li>
+    </ul>
+</li>
 
 
 </ul>

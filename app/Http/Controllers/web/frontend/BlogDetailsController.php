@@ -9,11 +9,16 @@ use App\Models\SocialMedia;
 
 class BlogDetailsController extends Controller
 {
-    public function index($id)
+    public function index($slug)
     {
         $social_media=SocialMedia::all();
-        $details=Blog::find($id);
+        $details=Blog::where('slug',$slug)->first();
+
+      $related=Blog::paginate(4);
+
+
         $details_image=array(explode(',',$details->image));
-      return view('frontend.layout.blog_details',['social_medias'=>$social_media,'detail'=>$details,'detail_image'=>$details_image]);
+      return view('frontend.layout.blog_details',['social_medias'=>$social_media,'detail'=>$details,
+      'detail_image'=>$details_image,'relateds'=>$related]);
     }
 }

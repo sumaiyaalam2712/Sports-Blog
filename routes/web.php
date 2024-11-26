@@ -12,6 +12,7 @@ use App\Http\Controllers\web\frontend\SignUpController;
 use App\Http\Controllers\web\backend\SubscriptionCategoryController;
 use App\Http\Controllers\web\backend\SocialMediaController;
 use App\Http\Controllers\web\backend\ProfileController;
+use App\Http\Controllers\web\backend\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,11 @@ Route::get('/create-profile', [ProfileController::class,'index'])->name('profile
 Route::post('/create-profile', [ProfileController::class,'create'])->name('profile.create');
 
 
+Route::get('/create-admin', [AdminController::class,'index'])->name('admin.index');
+Route::post('/create-admin', [AdminController::class,'create'])->name('admin.create');
+
+
+
 Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');
 Route::get('/score', [ScoreController::class,'display'])->name('score.display');
 Route::get('/create-subscription-category', [SubscriptionCategoryController::class,'index'])->name('subscription.category.index');
@@ -48,7 +54,7 @@ Route::post('/create-subscription-category', [SubscriptionCategoryController::cl
 
 
 Route::get('/', [IndexController::class,'index'])->name('home.index');
-    Route::get('/blog-details/{id}', [BlogDetailsController::class,'index'])->name('blog.details.index');
+    Route::get('/blog-details/{slug}', [BlogDetailsController::class,'index'])->name('blog.details.index');
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::get('/register', [SignUpController::class, 'index'])->name('register');
 

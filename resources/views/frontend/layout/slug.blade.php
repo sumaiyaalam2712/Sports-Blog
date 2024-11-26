@@ -103,21 +103,21 @@
                                     <a class="modal-next-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                         href="#">Subscribe Now</a>
                                     <!-- <div class="card-gap-line"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="plan-point">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li>Support the writers </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li>Watch Premium contents </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li>Adds Free Blog Contents</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="plan-point">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li>Support the writers </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li>Watch Premium contents </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li>Adds Free Blog Contents</li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div> -->
                                 </div>
                             @endforeach
                             <!-- plan card two -->
 
                             <!-- <div class="card-gap-line"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="plan-point">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li>Support the writers </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li>Watch Premium contents </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li>Adds Free Blog Contents</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="plan-point">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li>Support the writers </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li>Watch Premium contents </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li>Adds Free Blog Contents</li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div> -->
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
 
 
                     @foreach ($toptwo as $top2)
-                        <a href="{{ route('blog.details.index', $top2->slug) }}" class="event-card">
+                        <a href="{{ route('blog.details.index', $top2->id) }}" class="event-card">
                             <div class="event-img">
 
                                 @php
@@ -160,7 +160,7 @@
                 </div>
                 <div class="top-headline-middle headline-box" data-aos="fade-up" data-aos-duration="1000">
                     <!-- event card  big -->
-                    <a href="{{ route('blog.details.index', $top1->slug) }}" class="event-card-2">
+                    <a href="{{ route('blog.details.index', $top1->id) }}" class="event-card-2">
                         @foreach ($top1_images as $top1_image)
                             <div class="event-img event-img-big">
                                 <img src="{{ asset('backend/' . $top1_image[0]) }}" alt="">
@@ -240,8 +240,7 @@
                                     <p class="common-card-para">
                                         {!! $all_news['semi_headline'] !!}
                                     </p>
-                                    <a href="{{ route('blog.details.index', $all_news->slug) }}"
-                                        class="common-card-link">
+                                    <a href="{{ route('blog.details.index', $all_news->id) }}" class="common-card-link">
                                         Read More
                                     </a>
                                 </div>
@@ -260,7 +259,7 @@
                     </div>
                     <div class="fetured-content-wrapper">
                         @foreach ($features as $feature)
-                            <a href="{{ route('blog.details.index', $feature->slug) }}" class="featured-content">
+                            <a href="{{ route('blog.details.index', $feature->id) }}" class="featured-content">
                                 @php
                                     $images = explode(',', $feature->image);
                                 @endphp
@@ -313,7 +312,7 @@
                                 fill="#E2E0E0" />
                         </svg>
                     </a>
-                    <a href="{{ route('blog.details.index', $transfer1->slug) }}"
+                    <a href="{{ route('blog.details.index', $transfer1->id) }}"
                         class="common-heading-2 common-heading tranfer-responsive-font">
                         {{ $transfer1['headline'] }}
                     </a>
@@ -323,7 +322,7 @@
                         <div class="transfer-left">
                             <!-- tranfer content-1 -->
                             @foreach ($transfertwo as $transfer2)
-                                <a href="{{ route('blog.details.index', $transfer2->slug) }}" class="transfer-content">
+                                <a href="{{ route('blog.details.index', $transfer2->id) }}" class="transfer-content">
                                     @php
                                         $images = explode(',', $transfer2->image);
                                     @endphp
@@ -336,7 +335,7 @@
 
                                     </div>
 
-                                    <a href="{{ route('blog.details.index', $transfer2->slug) }}" class="common-heading">
+                                    <a href="{{ route('blog.details.index', $transfer2->id) }}" class="common-heading">
                                         {{ $transfer2['headline'] }}
                                     </a>
                                 </a>
@@ -349,7 +348,7 @@
                         <div class="transfer-right">
                             <!-- tranfer content-1 -->
                             @foreach ($transferthree as $transfer3)
-                                <a href="{{ route('blog.details.index', $transfer3->slug) }}" class="transfer-content">
+                                <a href="{{ route('blog.details.index', $transfer3->id) }}" class="transfer-content">
                                     @php
                                         $images = explode(',', $transfer3->image);
                                     @endphp
@@ -362,7 +361,7 @@
 
                                     </div>
 
-                                    <a href="{{ route('blog.details.index', $transfer3->slug) }}" class="common-heading">
+                                    <a href="{{ route('blog.details.index', $transfer3->id) }}" class="common-heading">
                                         {{ $transfer3['headline'] }}
                                     </a>
                                 </a>

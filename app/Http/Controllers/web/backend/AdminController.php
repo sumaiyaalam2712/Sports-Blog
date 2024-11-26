@@ -5,13 +5,15 @@ namespace App\Http\Controllers\web\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
-class ProfileController extends Controller
+
+class AdminController extends Controller
 {
     public function index()
     {
 
-        return view('backend.layout.profile setting.create');
+        return view('backend.layout.admin.create');
     }
 
 
@@ -22,16 +24,18 @@ class ProfileController extends Controller
      $request->validate(
          [
             'name'=>'required|string',
-
+            'role'=>'nullable|in:user,admin',
          'phone'=>'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|unique:users,phone|min:10',
          'photo'=>'nullable||image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
-         'address'=>'nullable'],
+         'address'=>'nullable',
+        'subscription_status'=>'nullable|in:active,end,cancelled,inactive'],
          ['required'=>'Fill with valid information']
      );
 
-     $data=User::find(auth()->user()->id);
+     $data=new User();
      $data->name=$request->name;
      $data->email=$request->email;
+     $data->password=Hash::make($request->password);
      $data->role=$request->role;
      $data->phone=$request->phone;
      $imageName = time().'.'.$request->photo->extension();

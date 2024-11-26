@@ -29,6 +29,8 @@ class IndexController extends Controller
 
 
 
+
+
     $top=Blog::where('news_type','top')->orderBy('creation_period','desc')->take(4)->get();
     $top2=Blog::where('news_type','top')->orderBy('creation_period','desc')->skip(1)->take(2)->get();
 
@@ -38,7 +40,8 @@ class IndexController extends Controller
     $transfer1=Blog::where('news_type','transfer news')->orderBy('creation_period','desc')->first();
     $transfer1_image= array(explode(',',$transfer1->image));
 
-    $transfer2=Blog::where('news_type','transfer news')->orderBy('creation_period','desc')->skip(1)->take(4)->get();
+    $transfer2=Blog::where('news_type','transfer news')->orderBy('creation_period','desc')->skip(1)->take(2)->get();
+    $transfer3=Blog::where('news_type','transfer news')->orderBy('creation_period','desc')->skip(3)->take(2)->get();
 
 
 
@@ -51,6 +54,6 @@ class IndexController extends Controller
 
     return view('frontend.layout.index',['social_medias'=>$social_media,'scores'=>$score,'all_newses'=>$all_news,'tops'=>$top,
     'toptwo'=>$top2,'top1'=>$top1,'transfer1'=>$transfer1,'transfertwo'=>$transfer2,'features'=>$feature,'subscriptions'=>$subscription,
-    'top1_images'=>$top1_image,'transfer1_images'=>$transfer1_image]);
+    'top1_images'=>$top1_image,'transfer1_images'=>$transfer1_image,'transferthree'=>$transfer3]);
   }
 }

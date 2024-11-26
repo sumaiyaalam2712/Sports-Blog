@@ -57,35 +57,21 @@
                                 </h3>
                             </div>
                             <div class="related-blog-post-wrapper">
-                                <!-- related post 1 -->
-                                <a href="#" class="related-single-post">
-                                    <div class="related-blog-img">
-                                        <img src="assets/images/related-blog-1.png" alt="" srcset="">
-                                    </div>
-                                    <p class="common-heading">
-                                        NBA free agency 2024: Reaction and grades for the biggest
-                                    </p>
-                                </a>
-                                <!-- related post 2 -->
-                                <a href="#" class="related-single-post">
-                                    <div class="related-blog-img">
-                                        <img src="assets/images/related-blog-2.png" alt="" srcset="">
-                                    </div>
-                                    <p class="common-heading">
-                                        Skylar Diggins-Smith (Seattle Storm)
-                                    </p>
-                                </a>
-                                <!-- related post 3 -->
-                                <a href="#" class="related-single-post">
-                                    <div class="related-blog-img">
-                                        <img src="assets/images/related-blog-3.png" alt="" srcset="">
-                                    </div>
-                                    <p class="common-heading">
-                                        Betnijah Laney-Hamilton (New York Liberty)
-                                    </p>
-                                </a>
+                                @foreach ($relateds as $related)
+                                    <!-- related post 1 -->
+                                    <a href="#" class="related-single-post">
 
-                                <a class="load-more-btn" href="#">Load More</a>
+                                        <p class="common-heading">
+                                            {{ $related['headline'] }}
+                                        </p>
+                                    </a>
+                                @endforeach
+                                <!-- related post 2 -->
+
+                                <!-- related post 3 -->
+
+
+                                <span>{{ $relateds->links() }}</span>
                             </div>
                         </div>
                     </div>
