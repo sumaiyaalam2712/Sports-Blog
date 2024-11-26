@@ -68,37 +68,23 @@ class ScoreController extends Controller
 
 
    public function display(Request $request)
+   {
+       if ($request->ajax()) {
+           // Assuming 'ScoreCard' is your model name
+           $data = ScoreCard::all();
 
-    {
+           return Datatables::of($data)
+               ->addIndexColumn()
+               ->addColumn('action', function ($row) {
+                   $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+                   return $btn;
+               })
+               ->rawColumns(['action'])
+               ->make(true);
+       }
 
-        if ($request->ajax()) {
+       // Return the view if it's not an AJAX request
+       return view('backend.layout.score card.display');
+   }
 
-            $data = ScoreCard::all();
-
-            return Datatables::of($data)
-
-                    ->addIndexColumn()
-
-                    ->addColumn('action', function($row){
-
-
-
-                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
-
-
-
-                            return $btn;
-
-                    })
-
-                    ->rawColumns(['action'])
-
-                    ->make(true);
-
-        }
-
-
-
-        return view('backend.layout.score card.display');
-}
 }

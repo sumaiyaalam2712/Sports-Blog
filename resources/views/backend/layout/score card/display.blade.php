@@ -75,95 +75,90 @@
 
 
     <script>
-        $(document).ready(function() {
-            var searchable = [];
-            var selectable = [];
-            $.ajaxSetup({
-                headers: {
-                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-                }
-            });
-            if (!$.fn.DataTable.isDataTable('#data-table')) {
-                let dTable = $('#data-table').DataTable({
-                    order: [],
-                    lengthMenu: [
-                        [25, 50, 100, 200, 500, -1],
-                        [25, 50, 100, 200, 500, "All"]
-                    ],
-                    processing: true,
-                    responsive: true,
-                    serverSide: true,
+      $(document).ready(function() {
+    var searchable = [];
+    var selectable = [];
 
-                    language: {
-                        processing: `<div class="text-center">
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        }
+    });
+
+    if (!$.fn.DataTable.isDataTable('#data-table')) {
+        let dTable = $('#data-table').DataTable({
+            order: [],
+            lengthMenu: [
+                [25, 50, 100, 200, 500, -1],
+                [25, 50, 100, 200, 500, "All"]
+            ],
+            processing: true,
+            responsive: true,
+            serverSide: true,
+
+            language: {
+                processing: `<div class="text-center">
                     <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                  </div>
-                    </div>`
-                    },
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>`
+            },
 
-                    scroller: {
-                        loadingIndicator: false
-                    },
-                    pagingType: "full_numbers",
-                    dom: "<'row justify-content-between table-topbar'<'col-md-2 col-sm-4 px-0'l><'col-md-2 col-sm-4 px-0'f>>tipr",
-                    ajax: {
-                        url: "{{ route('score.display') }}",
-                        type: "get",
-
-                    },
-
-
-                    columns: [{
-                            data: 'DT_RowIndex',
-                            name: 'DT_RowIndex',
-                            orderable: false,
-                            searchable: false
-                        },
-                        {
-                            data: 'sports_type',
-                            name: 'sports_type',
-                            orderable: true,
-                            searchable: true
-                        },
-                        {
-                            data: 'team1_name',
-                            name: 'team1_name',
-                            orderable: true,
-                            searchable: true
-                        },
-                        {
-                            data: 'team2_name',
-                            name: 'team2_name',
-                            orderable: true,
-                            searchable: true
-                        },
-                        {
-                            data: 'team1_score',
-                            name: 'team1_score',
-                            orderable: true,
-                            searchable: true
-                        },
-                        {
-                            data: 'team2_score',
-                            name: 'team2_score',
-                            orderable: true,
-                            searchable: true
-                        },
-
-                        {
-                            data: 'action',
-                            name: 'action',
-                            orderable: true,
-                            searchable: true
-                        },
-
-
-                    ],
-                });
-
-                new DataTable('#example', {
-                    responsive: true
-                });
-            }
+            scroller: {
+                loadingIndicator: false
+            },
+            pagingType: "full_numbers",
+            dom: "<'row justify-content-between table-topbar'<'col-md-2 col-sm-4 px-0'l><'col-md-2 col-sm-4 px-0'f>>tipr",
+            ajax: {
+                url: "{{ route('score.display') }}",
+                type: "GET",
+            },
+            columns: [
+                {
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex',
+                    orderable: false,
+                    searchable: false
+                },
+                {
+                    data: 'sports_type',
+                    name: 'sports_type',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'team1_name',
+                    name: 'team1_name',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'team2_name',
+                    name: 'team2_name',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'team1_score',
+                    name: 'team1_score',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'team2_score',
+                    name: 'team2_score',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searchable: false
+                },
+            ],
         });
+    }
+});
+
+    </script>

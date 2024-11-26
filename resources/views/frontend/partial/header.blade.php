@@ -7,12 +7,14 @@
                 </a>
                 <div class="nav-search-area desktop-searcbar">
                     <div class="nav-search-input-field">
-                        <form action="#">
-                            <input type="text" name="search" class="bg-nav-black">
+                        <form action="{{ route('search.search') }}" method="POST">
+                            @csrf
+                            <input type="text" name="search" placeholder="search" class="bg-nav-black"><span><button
+                                    type="submit">search</button></span>
                             <div class="nav-search-icon">
-                                <img src="{{ asset('frontend/assets/images/search-normal.svg') }}" alt=""
-                                    srcset="">
+
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -35,7 +37,9 @@
                     </div>
                 </div>
                 <div class="profile-img">
+
                     <img src="{{ asset('frontend/assets/images/profile-circle.png') }}" alt="" srcset="">
+
                     <!-- LOG IN/SIGN UP Popup content -->
                     <div class="hidden profile-popup">
                         <div class="profile-popup-content">

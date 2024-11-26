@@ -13,6 +13,7 @@ use App\Http\Controllers\web\backend\SubscriptionCategoryController;
 use App\Http\Controllers\web\backend\SocialMediaController;
 use App\Http\Controllers\web\backend\ProfileController;
 use App\Http\Controllers\web\backend\AdminController;
+use App\Http\Controllers\web\frontend\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,10 @@ Route::post('/create-profile', [ProfileController::class,'create'])->name('profi
 
 Route::get('/create-admin', [AdminController::class,'index'])->name('admin.index');
 Route::post('/create-admin', [AdminController::class,'create'])->name('admin.create');
+
+
+Route::get('/search', [SearchController::class,'index'])->name('search.index');
+Route::post('/search', [SearchController::class,'search'])->name('search.search');
 
 
 
