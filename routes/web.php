@@ -31,9 +31,18 @@ use App\Http\Controllers\web\frontend\SearchController;
 //});
 
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
 Route::get('/create-blog', [BlogController::class,'index'])->name('blog.index');
 Route::post('/create-blog', [BlogController::class,'create'])->name('blog.create');
+Route::get('/blog', [BlogController::class,'display'])->name('blog.display');
+
+
+
 Route::get('/create-score', [ScoreController::class,'index'])->name('score.index');
+Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');
+Route::get('/score', [ScoreController::class,'display'])->name('score.display');
+
 
 Route::get('/create-social-media', [SocialMediaController::class,'index'])->name('social.media.index');
 Route::post('/create-social-media', [SocialMediaController::class,'create'])->name('social.media.create');
@@ -52,8 +61,7 @@ Route::post('/search', [SearchController::class,'search'])->name('search.search'
 
 
 
-Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');
-Route::get('/score', [ScoreController::class,'display'])->name('score.display');
+
 Route::get('/create-subscription-category', [SubscriptionCategoryController::class,'index'])->name('subscription.category.index');
 Route::post('/create-subscription-category', [SubscriptionCategoryController::class,'create'])->name('subscription.category.create');
 

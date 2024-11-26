@@ -37,3 +37,5 @@
 <script src="{{ asset('backend/assets/vendor/js/helpers.js') }}"></script>
 
 <script src="{{ asset('backend/assets/js/config.js') }}"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />

@@ -56,4 +56,13 @@ $data->image= implode(',' ,$multiple);
 
 
    }
+
+
+
+   public function display()
+   {
+
+    $data=Blog::all();
+    return view('backend.layout.blog.display',['datas'=>$data]);
+   }
 }

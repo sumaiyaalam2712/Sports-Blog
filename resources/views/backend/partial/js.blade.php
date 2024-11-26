@@ -32,4 +32,7 @@
 <!-- Dropify JS -->
 <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dropify/dist/js/dropify.min.js"></script>
+
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
 @stack('scripts')
