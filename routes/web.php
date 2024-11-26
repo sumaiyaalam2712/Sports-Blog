@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+//use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\web\backend\DashboardController;
 use App\Http\Controllers\web\backend\BlogController;
@@ -11,6 +11,7 @@ use App\Http\Controllers\web\frontend\BlogDetailsController;
 use App\Http\Controllers\web\frontend\SignUpController;
 use App\Http\Controllers\web\backend\SubscriptionCategoryController;
 use App\Http\Controllers\web\backend\SocialMediaController;
+use App\Http\Controllers\web\backend\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,10 @@ Route::get('/create-score', [ScoreController::class,'index'])->name('score.index
 
 Route::get('/create-social-media', [SocialMediaController::class,'index'])->name('social.media.index');
 Route::post('/create-social-media', [SocialMediaController::class,'create'])->name('social.media.create');
+
+
+Route::get('/create-profile', [ProfileController::class,'index'])->name('profile.index');
+Route::post('/create-profile', [ProfileController::class,'create'])->name('profile.create');
 
 
 Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');

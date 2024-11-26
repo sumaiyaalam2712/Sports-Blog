@@ -115,53 +115,51 @@
 
 
                     columns: [{
-                                data: 'DT_RowIndex',
-                                name: 'DT_RowIndex',
-                                orderable: false,
-                                searchable: false
-                            },
-                            {
-                                data: 'sports_type',
-                                name: 'sports_type',
-                                orderable: true,
-                                searchable: true
-                            },
-                            {
-                                data: 'team1_name',
-                                name: 'team1_name',
-                                orderable: true,
-                                searchable: true
-                            },
-                            {
-                                data: 'team2_name',
-                                name: 'team2_name',
-                                orderable: true,
-                                searchable: true
-                            },
-                            {
-                                data: 'team1_score',
-                                name: 'team1_score',
-                                orderable: true,
-                                searchable: true
-                            },
-                            {
-                                data: 'team2_score',
-                                name: 'team2_score',
-                                orderable: true,
-                                searchable: true
-                            },
+                            data: 'DT_RowIndex',
+                            name: 'DT_RowIndex',
+                            orderable: false,
+                            searchable: false
+                        },
+                        {
+                            data: 'sports_type',
+                            name: 'sports_type',
+                            orderable: true,
+                            searchable: true
+                        },
+                        {
+                            data: 'team1_name',
+                            name: 'team1_name',
+                            orderable: true,
+                            searchable: true
+                        },
+                        {
+                            data: 'team2_name',
+                            name: 'team2_name',
+                            orderable: true,
+                            searchable: true
+                        },
+                        {
+                            data: 'team1_score',
+                            name: 'team1_score',
+                            orderable: true,
+                            searchable: true
+                        },
+                        {
+                            data: 'team2_score',
+                            name: 'team2_score',
+                            orderable: true,
+                            searchable: true
+                        },
 
-                            {
-                                data: 'action',
-                                name: 'action',
-                                orderable: true,
-                                searchable: true
-                            },
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: true,
+                            searchable: true
+                        },
 
 
-                        ]
-
-                        ,
+                    ],
                 });
 
                 new DataTable('#example', {

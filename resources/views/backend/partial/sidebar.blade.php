@@ -51,4 +51,49 @@
     </li>
 
 
+    <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">settings</span>
+    </li>
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Subscription Category">Settings</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('profile.index') }}" class="menu-link">
+                    <div data-i18n="Update Profile">Update Profile</div>
+                </a>
+            </li>
+
+
+
+        </ul>
+    </li>
+
+
+
+
+
+    <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Social Media Info</span>
+    </li>
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Social Media">Social Media</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('social.media.index') }}" class="menu-link">
+                    <div data-i18n="Add Social Media Info">Add Social Media Info</div>
+                </a>
+            </li>
+
+
+
+        </ul>
+    </li>
+
+
 </ul>
