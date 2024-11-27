@@ -82,6 +82,16 @@
                                 @foreach ($relateds as $related)
                                     <!-- related post 1 -->
                                     <a href="{{ route('blog.details.index', $related->slug) }}" class="related-single-post">
+                                        <div class="related-blog-img">
+                                            @php
+                                            $images = explode(',', $related->image);
+                                        @endphp
+                                        @if (isset($images[0]))
+                                        <img src="{{ asset('backend/' . $images[0]) }}" alt="Event Image" srcset="">
+                                    @else
+                                        <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image" srcset="">
+                                    @endif
+                                        </div>
 
                                         <p class="common-heading">
                                             {{ $related['headline'] }}

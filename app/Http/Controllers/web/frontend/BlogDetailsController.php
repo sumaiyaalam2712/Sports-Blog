@@ -14,7 +14,7 @@ class BlogDetailsController extends Controller
         $social_media=SocialMedia::all();
         $details=Blog::where('slug',$slug)->first();
 
-      $related=Blog::paginate(4);
+      $related=Blog::orderBy('creation_period','desc')->paginate(3);
 
 
         $details_image=array(explode(',',$details->image));
