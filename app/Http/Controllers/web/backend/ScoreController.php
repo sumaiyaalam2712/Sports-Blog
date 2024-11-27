@@ -105,8 +105,7 @@ class ScoreController extends Controller
         'team2_name'=>'required|string|min:3|max:30',
         'team1_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
         'team2_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
-        'team1_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
-        'team2_logo'=>'required|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
+
         'winner'=>'required|string|min:3|max:30',
         'play_date'=>'required|date'],
         ['required'=>'Fill with valid information']
@@ -120,12 +119,18 @@ class ScoreController extends Controller
     $data->team2_name=$request->team2_name;
     $data->team1_score=$request->team1_score;
     $data->team2_score=$request->team2_score;
+
+    if($request->file('team1_logo')){
     $team1logo = time().'.'.$request->team1_logo->extension();
     $request->team1_logo->move(public_path('backend'), $team1logo);
     $data->team1_logo=$team1logo;
+    }
+
+    if($request->file('team2_logo')){
     $team2logo = time().'.'.$request->team2_logo->extension();
     $request->team2_logo->move(public_path('backend'), $team2logo);
     $data->team2_logo=$team2logo;
+    }
     $data->winner=$request->winner;
     $data->play_date=$request->play_date;
     $data->save();

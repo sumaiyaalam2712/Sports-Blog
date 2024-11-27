@@ -33,9 +33,31 @@
 
                             </div>
                         @endforeach
+                        @php
+                            $images = explode(',', $detail->image);
+                        @endphp
+
+                        @php
+                            $description = $detail->description;
+                            $half_length = floor(strlen($description) / 2);
+                            $start_description = substr($description, 0, $half_length);
+                            $end_description = substr($description, $half_length);
+
+                        @endphp
 
                         <p class="blog-post-details">
-                            {!! $detail['description'] !!}
+                            {!! $start_description !!}
+                        </p>
+                        <div class="blog-feture-img blog-feture-img-2">
+
+                            <img src="{{ asset('backend/' . $images[0]) }}" alt="">
+
+                        </div>
+
+
+
+                        <p class="blog-post-details">
+                            {!! $end_description !!}
                         </p>
                         <br>
                         @foreach ($detail_image as $detailss_image)
@@ -59,7 +81,7 @@
                             <div class="related-blog-post-wrapper">
                                 @foreach ($relateds as $related)
                                     <!-- related post 1 -->
-                                    <a href="#" class="related-single-post">
+                                    <a href="{{ route('blog.details.index', $related->slug) }}" class="related-single-post">
 
                                         <p class="common-heading">
                                             {{ $related['headline'] }}

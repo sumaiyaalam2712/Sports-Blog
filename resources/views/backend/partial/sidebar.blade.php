@@ -58,7 +58,11 @@
                 </a>
             </li>
 
-
+            <li class="menu-item">
+                <a href="{{ route('subscription.display') }}" class="menu-link">
+                    <div data-i18n="Display Subscription Category">Display Subscription Category</div>
+                </a>
+            </li>
 
         </ul>
     </li>

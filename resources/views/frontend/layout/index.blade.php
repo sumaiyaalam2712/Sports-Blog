@@ -266,7 +266,7 @@
                                 @endphp
 
 
-                                <a href="blog-details.html" class="featured-content">
+                                <a href="{{ route('blog.details.index', $feature->slug) }}" class="featured-content">
                                     <div class="fetured-img">
                                         @if (isset($images[0]))
                                             <img src="{{ asset('backend/' . $images[0]) }}" alt="Event Image">

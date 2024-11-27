@@ -91,7 +91,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Team-1 Logo</label>
                                 <input type="file" class="form-control dropify" id="basic-default-fullname"
-                                    name="team1_logo" data-default-file="{{asset('backend/'.$data['team1_logo']) }}" placeholder="Team-1 Logo" />
+                                    name="team1_logo" data-default-file="{{asset('backend/'.$data['team1_logo']) }}"  placeholder="Team-1 Logo" />
                             </div>
                             @error('team1_logo')
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
