@@ -1,4 +1,21 @@
     <!-- header area starts -->
+    <style>
+        .search__form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .search__form .submit__button {
+            display: block;
+            padding:8px 16px;
+            background: #fff;
+            color:#000;
+            border-radius: 8px;
+
+        }
+    </style>
+
+
     <header class="bg-nav-black">
         <div class="nav-wrapper">
             <div class="nav-left">
@@ -7,10 +24,11 @@
                 </a>
                 <div class="nav-search-area desktop-searcbar">
                     <div class="nav-search-input-field">
-                        <form action="{{ route('search.search') }}" method="POST">
+                        <form class="search__form" action="{{ route('search.search') }}" method="POST">
                             @csrf
-                            <input type="text" name="search" placeholder="search" class="bg-nav-black"><span><button
-                                    type="submit">search</button></span>
+                            <input type="text" name="search" placeholder="search" class="bg-nav-black">
+                            <button type="submit" class="submit__button">search</button>
+
                             <div class="nav-search-icon">
 
                             </div>
