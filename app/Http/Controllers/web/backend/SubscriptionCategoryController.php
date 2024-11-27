@@ -120,4 +120,13 @@ session()->flash('success', 'The package values are not matching with each other
 
    }
 
+
+   public function display()
+   {
+
+    $data=SubscriptionCategory::all();
+
+    return view('backend.layout.subscription category.display',['datas'=>$data]);
+   }
+
 }

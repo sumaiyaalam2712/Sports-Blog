@@ -36,12 +36,18 @@ Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['aut
 Route::get('/create-blog', [BlogController::class,'index'])->name('blog.index');
 Route::post('/create-blog', [BlogController::class,'create'])->name('blog.create');
 Route::get('/blog', [BlogController::class,'display'])->name('blog.display');
+Route::get('/blog/edit/{id}', [BlogController::class,'edit'])->name('blog.edit');
+Route::post('/blog/update', [BlogController::class,'update'])->name('blog.update');
+Route::get('/blog/delete/{id}', [BlogController::class,'delete'])->name('blog.delete');
 
 
 
 Route::get('/create-score', [ScoreController::class,'index'])->name('score.index');
 Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');
 Route::get('/score', [ScoreController::class,'display'])->name('score.display');
+Route::get('/score/edit/{id}', [ScoreController::class,'edit'])->name('score.edit');
+Route::post('/score/update', [ScoreController::class,'update'])->name('score.update');
+Route::get('/score/delete/{id}', [ScoreController::class,'delete'])->name('score.delete');
 
 
 Route::get('/create-social-media', [SocialMediaController::class,'index'])->name('social.media.index');
@@ -64,6 +70,10 @@ Route::post('/search', [SearchController::class,'search'])->name('search.search'
 
 Route::get('/create-subscription-category', [SubscriptionCategoryController::class,'index'])->name('subscription.category.index');
 Route::post('/create-subscription-category', [SubscriptionCategoryController::class,'create'])->name('subscription.category.create');
+Route::get('/subscription', [SubscriptionCategoryController::class,'display'])->name('subscription.display');
+Route::get('/subscription/edit/{id}', [SubscriptionCategoryController::class,'edit'])->name('subscription.edit');
+Route::post('/subscription/update', [SubscriptionCategoryController::class,'update'])->name('subscription.update');
+Route::get('/subscription/delete/{id}', [SubscriptionCategoryController::class,'delete'])->name('subscription.delete');
 
 
 Route::get('/', [IndexController::class,'index'])->name('home.index');

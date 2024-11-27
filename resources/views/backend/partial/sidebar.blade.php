@@ -12,18 +12,31 @@
     <li class="menu-header small text-uppercase"><span class="menu-header-text">BLOG</span></li>
     <!-- Cards -->
     <li class="menu-item">
-        <a href="{{ route('blog.create') }}" class="menu-link">
+        <a href="{{ route('blog.index') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-collection"></i>
             <div data-i18n="Basic">Add Blog</div>
         </a>
     </li>
+    <li class="menu-item">
+        <a href="{{ route('blog.display') }}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Display Blog</div>
+        </a>
+    </li>
+
 
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Score Card</span></li>
     <!-- Cards -->
     <li class="menu-item">
-        <a href="{{ route('score.create') }}" class="menu-link">
+        <a href="{{ route('score.index') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-collection"></i>
             <div data-i18n="Basic">Create Score Card</div>
+        </a>
+    </li>
+    <li class="menu-item">
+        <a href="{{ route('score.display') }}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Display Score Card</div>
         </a>
     </li>
 
