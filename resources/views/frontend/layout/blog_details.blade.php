@@ -49,8 +49,12 @@
                             {!! $start_description !!}
                         </p>
                         <div class="blog-feture-img blog-feture-img-2">
+                            @if (isset($images[1]))
 
-                            <img src="{{ asset('backend/' . $images[0]) }}" alt="">
+                                    <img src="{{ asset('backend/' . $images[1]) }}" alt="">
+                            @else
+                                <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image" srcset="">
+                            @endif
 
                         </div>
 
@@ -60,15 +64,7 @@
                             {!! $end_description !!}
                         </p>
                         <br>
-                        @foreach ($detail_image as $detailss_image)
-                            <div class="blog-feture-img">
-                                @if (count($detailss_image) > 1)
-                                    <img src="{{ asset('backend/' . $detailss_image[1]) }}" alt="">
-                                @else
-                                    <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image">
-                                @endif
-                            </div>
-                        @endforeach
+
                     </div>
                     <!-- related-post-area -->
                     <div class="related-blog-wrapper" data-aos="fade-left" data-aos-duration="1000">
@@ -84,13 +80,15 @@
                                     <a href="{{ route('blog.details.index', $related->slug) }}" class="related-single-post">
                                         <div class="related-blog-img">
                                             @php
-                                            $images = explode(',', $related->image);
-                                        @endphp
-                                        @if (isset($images[0]))
-                                        <img src="{{ asset('backend/' . $images[0]) }}" alt="Event Image" srcset="">
-                                    @else
-                                        <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image" srcset="">
-                                    @endif
+                                                $images = explode(',', $related->image);
+                                            @endphp
+                                            @if (isset($images[0]))
+                                                <img src="{{ asset('backend/' . $images[0]) }}" alt="Event Image"
+                                                    srcset="">
+                                            @else
+                                                <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image"
+                                                    srcset="">
+                                            @endif
                                         </div>
 
                                         <p class="common-heading">
