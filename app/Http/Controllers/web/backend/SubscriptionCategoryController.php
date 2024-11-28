@@ -254,4 +254,21 @@ session()->flash('success', 'The package values are not matching with each other
 
    }
 
+
+   public function delete($id)
+   {
+
+    $data=SubscriptionCategory::find($id);
+    $data->delete();
+    try {
+
+        session()->flash('success', 'Form has been deleted successfully!');
+    } catch (\Exception $e) {
+
+        session()->flash('error', 'There was an error deleting the form. Please try again.');
+    }
+    return redirect()->back();
+
+   }
+
 }

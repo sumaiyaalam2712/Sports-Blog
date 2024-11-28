@@ -30,17 +30,24 @@ use App\Http\Controllers\web\frontend\SearchController;
    // return view('welcome');
 //});
 
-Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth','isadmin'])->name('dashboard');
+Route::get('/', [IndexController::class,'index'])->name('home.index');
+Route::get('/blog-details/{slug}', [BlogDetailsController::class,'index'])->name('blog.details.index');
+Route::get('/login', [LoginController::class,'index'])->name('login');
+Route::get('/register', [SignUpController::class, 'index'])->name('register');
+Route::get('/search', [SearchController::class,'index'])->name('search.index');
+Route::post('/search', [SearchController::class,'search'])->name('search.search');
 
-
+Route::prefix('/dashboard/blog')->middleware(['auth','isadmin'])->group(function(){
 Route::get('/create-blog', [BlogController::class,'index'])->name('blog.index');
 Route::post('/create-blog', [BlogController::class,'create'])->name('blog.create');
 Route::get('/blog', [BlogController::class,'display'])->name('blog.display');
 Route::get('/blog/edit/{id}', [BlogController::class,'edit'])->name('blog.edit');
 Route::post('/blog/update', [BlogController::class,'update'])->name('blog.update');
 Route::get('/blog/delete/{id}', [BlogController::class,'delete'])->name('blog.delete');
+});
 
-
+Route::prefix('/dashboard/score')->middleware(['auth','isadmin'])->group(function(){
 
 Route::get('/create-score', [ScoreController::class,'index'])->name('score.index');
 Route::post('/create-score', [ScoreController::class,'create'])->name('score.create');
@@ -48,44 +55,45 @@ Route::get('/score', [ScoreController::class,'display'])->name('score.display');
 Route::get('/score/edit/{id}', [ScoreController::class,'edit'])->name('score.edit');
 Route::post('/score/update', [ScoreController::class,'update'])->name('score.update');
 Route::get('/score/delete/{id}', [ScoreController::class,'delete'])->name('score.delete');
+});
 
 
+Route::prefix('/dashboard/social')->middleware(['auth','isadmin'])->group(function(){
 Route::get('/create-social-media', [SocialMediaController::class,'index'])->name('social.media.index');
 Route::post('/create-social-media', [SocialMediaController::class,'create'])->name('social.media.create');
+Route::get('/socialmedia', [ScoreController::class,'display'])->name('social.media.display');
+Route::get('/socialmedia/edit/{id}', [ScoreController::class,'edit'])->name('social.media.edit');
+Route::post('/socialmedia/update', [ScoreController::class,'update'])->name('social.media.update');
+Route::get('/socialmedia/delete/{id}', [ScoreController::class,'delete'])->name('social.media.delete');
+});
 
 
+Route::prefix('/dashboard/admin')->middleware(['auth','isadmin'])->group(function(){
 Route::get('/create-profile', [ProfileController::class,'index'])->name('profile.index');
 Route::post('/create-profile', [ProfileController::class,'create'])->name('profile.create');
-
-
 Route::get('/create-admin', [AdminController::class,'index'])->name('admin.index');
 Route::post('/create-admin', [AdminController::class,'create'])->name('admin.create');
-
-
-Route::get('/search', [SearchController::class,'index'])->name('search.index');
-Route::post('/search', [SearchController::class,'search'])->name('search.search');
+});
 
 
 
 
+
+
+
+Route::prefix('/dashboard/subscription')->middleware(['auth','isadmin'])->group(function(){
 Route::get('/create-subscription-category', [SubscriptionCategoryController::class,'index'])->name('subscription.category.index');
 Route::post('/create-subscription-category', [SubscriptionCategoryController::class,'create'])->name('subscription.category.create');
 Route::get('/subscription', [SubscriptionCategoryController::class,'display'])->name('subscription.display');
 Route::get('/subscription/edit/{id}', [SubscriptionCategoryController::class,'edit'])->name('subscription.edit');
 Route::post('/subscription/update', [SubscriptionCategoryController::class,'update'])->name('subscription.update');
 Route::get('/subscription/delete/{id}', [SubscriptionCategoryController::class,'delete'])->name('subscription.delete');
-
-
-Route::get('/', [IndexController::class,'index'])->name('home.index');
-    Route::get('/blog-details/{slug}', [BlogDetailsController::class,'index'])->name('blog.details.index');
-Route::get('/login', [LoginController::class,'index'])->name('login');
-Route::get('/register', [SignUpController::class, 'index'])->name('register');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
+
+
 
 
 require __DIR__.'/auth.php';

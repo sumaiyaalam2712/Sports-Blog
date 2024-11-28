@@ -1,6 +1,14 @@
 @extends('backend.app')
+@push('scripts')
+<style>
+
+    .container{
+        margin:20px;
+    }
+</style>
+@endpush
 @section('content')
-    <div class="container">
+    <div class="container" >
         <br>
         <div class="card">
             <h5 class="card-header">Blogs</h5>
@@ -10,6 +18,7 @@
             <div style="display: flex;justify-content: end;"><a href="{{ route('blog.index') }}" class="btn btn-primary">Add
                     New Blogs</a></div>
             <div class="table-responsive text-nowrap">
+                <div class="card">
                 <table class="table table-striped" id="myTable">
                     <thead>
                         <tr>
@@ -22,8 +31,10 @@
                             <th>News Type</th>
                             <th>Sports Type</th>
                             <th>Image</th>
-                            <th>Actions</th>
                             <th>Description</th>
+                            <th>Actions</th>
+
+
 
                         </tr>
                     </thead>
@@ -33,7 +44,7 @@
                                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
                                     <strong>{{ $data['headline'] }}</strong>
                                 </td>
-                                <td>{{ $data['sub_headline'] }}</td>
+                                <td>{!! \Illuminate\Support\Str::limit($data['sub_headline'], 20) . ' <a href="' . route('blog.details.index', ['slug' => $data->slug]) . '">see more</a>' !!}</td>
                                 <td>{{ $data['news_type'] }}</td>
                                 <td>{{ $data['sports_type'] }}</td>
 
@@ -51,7 +62,7 @@
                                         @endforeach
                                     </ul>
                                 </td>
-
+                                <td>{!! \Illuminate\Support\Str::limit($data['description'], 30) . ' <a href="' . route('blog.details.index', ['slug' => $data->slug]) . '">see more</a>' !!}</td>
 
                                 <td>
                                     <div class="dropdown">
@@ -69,7 +80,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>{!! $data['description'] !!}</td>
+
                             </tr>
                         @endforeach
 
@@ -79,14 +90,16 @@
                 </table>
             </div>
         </div>
+        </div>
     </div>
 
 
     @push('scripts')
-        <script>
-            $(document).ready(function() {
-                $('#myTable').DataTable();
-            });
-        </script>
+    <script>
+        // This ensures the table is initialized only after the page is fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            let table = new DataTable('#myTable');
+        });
+    </script>
     @endpush
 @endsection

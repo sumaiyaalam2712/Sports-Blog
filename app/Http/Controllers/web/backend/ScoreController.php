@@ -51,7 +51,7 @@ class ScoreController extends Controller
     $data->save();
     try {
 
-        session()->flash('success', 'Form Submission is done successfully!');
+        session()->flash('success', 'Form has been Updated successfully!');
     } catch (\Exception $e) {
 
         session()->flash('error', 'There was an error submitting the form. Please try again.');
@@ -144,8 +144,6 @@ class ScoreController extends Controller
     return redirect()->back();
 
    }
-
-
 
 
 

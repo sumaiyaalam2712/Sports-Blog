@@ -5,15 +5,17 @@
     <br>
     <div class="container">
         @if (session('success'))
-            <div class="mt-3 alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-        @if (session('error'))
-            <div class="alert alert-success">
-                {{ session('error') }}
-            </div>
-        @endif
+        <div class="mt-3 alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-success">
+            {{ session('error') }}
+        </div>
+    @endif
+        <div class="card">
+
         <div class="row">
             <div class="col-xl">
                 <div class="mb-4 card">
@@ -96,7 +98,7 @@
 
         </div>
     </div>
-
+</div>
 
     @push('scripts')
         <script>
