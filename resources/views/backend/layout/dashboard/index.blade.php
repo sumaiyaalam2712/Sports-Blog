@@ -48,10 +48,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <span class="mb-1 fw-semibold d-block">Subscribers</span>
-                                    <h3 class="mb-2 card-title">$12,628</h3>
+                                    <span class="mb-1 fw-semibold d-block">Users</span>
+                                    <h3 class="mb-2 card-title">{{ $user }}</h3>
                                     <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        +72.80%</small>
+                                        total</small>
                                 </div>
                             </div>
                         </div>
@@ -74,10 +74,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <span>Sales</span>
-                                    <h3 class="mb-1 card-title text-nowrap">$4,679</h3>
+                                    <span>Subscribers</span>
+                                    <h3 class="mb-1 card-title text-nowrap">400</h3>
                                     <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        +28.42%</small>
+                                        total</small>
                                 </div>
                             </div>
                         </div>

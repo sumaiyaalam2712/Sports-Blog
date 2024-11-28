@@ -119,7 +119,7 @@
     <input type="file"
 class="form-control dropify"
 id="image"
-name="image"
+name="image[]"
 data-default-file="{{ asset('backend/' . $image) }}"  />
 </div>
 @endforeach

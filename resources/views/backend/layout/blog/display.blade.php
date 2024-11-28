@@ -42,7 +42,7 @@
                         @foreach ($datas as $data)
                             <tr>
                                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
-                                    <strong>{{ $data['headline'] }}</strong>
+                                    <strong>{{$data['headline']}}</strong>
                                 </td>
                                 <td>{!! \Illuminate\Support\Str::limit($data['sub_headline'], 20) . ' <a href="' . route('blog.details.index', ['slug' => $data->slug]) . '">see more</a>' !!}</td>
                                 <td>{{ $data['news_type'] }}</td>

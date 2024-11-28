@@ -24,7 +24,7 @@ class ProfileController extends Controller
             'name'=>'required|string',
 
          'phone'=>'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|unique:users,phone|min:10',
-         'photo'=>'nullable||image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
+         'photo'=>'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
          'address'=>'nullable'],
          ['required'=>'Fill with valid information']
      );
@@ -32,11 +32,16 @@ class ProfileController extends Controller
      $data=User::find(auth()->user()->id);
      $data->name=$request->name;
      $data->email=$request->email;
-     $data->role=$request->role;
+
      $data->phone=$request->phone;
+
      $imageName = time().'.'.$request->photo->extension();
-     $request->photo->move(public_path('backend'), $imageName);
+     if($request->file('photo'))
+     {
+        $request->photo->move(public_path('backend'), $imageName);
+
      $data->photo= $imageName;
+     }
      $data->address=$request->address;
 
      $data->save();
@@ -48,7 +53,7 @@ class ProfileController extends Controller
 
          session()->flash('error', 'There was an error submitting the form. Please try again.');
      }
-     return redirect()->back();
+     return redirect('/dashboard');
 
 
     }

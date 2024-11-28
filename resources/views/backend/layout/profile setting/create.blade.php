@@ -50,19 +50,7 @@
 
 
 
-                            <div class="mb-3">
-                                <label class="form-label" for="basic-default-fullname">Role</label>
-                                <select class="form-select" name="role" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    <option value="user">user</option>
-                                    <option value="admin ">admin </option>
-                                </select>
-                                @error('role')
-                                    <div class="invalid-feedback" style="color:darkslateblue,font-weight:bold;">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
+                            
 
 
                             <div class="mb-3">
@@ -77,7 +65,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Photo</label>
-                                <input type="file" class="form-control dropify" id="basic-default-fullname"
+                                <input type="file" class="form-control dropify" id="basic-default-fullname" data-default-file="{{ asset('backend/' . auth()->user()->photo )}}"
                                     name="photo" placeholder="Photo" />
                             </div>
                             @error('photo')
