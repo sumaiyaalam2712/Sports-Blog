@@ -5,11 +5,12 @@
             flex-direction: row;
             align-items: center;
         }
+
         .search__form .submit__button {
             display: block;
-            padding:8px 16px;
+            padding: 8px 16px;
             background: #fff;
-            color:#000;
+            color: #000;
             border-radius: 8px;
 
         }
@@ -61,17 +62,22 @@
                     <!-- LOG IN/SIGN UP Popup content -->
                     <div class="hidden profile-popup">
                         <div class="profile-popup-content">
-                            <a href="{{ route('login') }}">Log In</a>
-                            <div class="line-div"></div>
-                            <a href="{{ route('register') }}">Sign Up</a>
-                            <div class="line-div"></div>
-                            <a href="{{ route('logout') }}" class="hum_log-out_btn"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fa-light fa-power-off"></i> Log Out
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+                            @auth
+                                <!-- If logged in, show Log Out button -->
+                                <a href="{{ route('logout') }}" class="hum_log-out_btn"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fa-light fa-power-off"></i> Log Out
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <a href="{{ route('register') }}">Sign Up</a>
+                            @else
+                                <!-- If not logged in, show Log In and Sign Up links -->
+                                <a href="{{ route('login') }}">Log In</a>
+                                <div class="line-div"></div>
+                                <a href="{{ route('register') }}">Sign Up</a>
+                            @endauth
                         </div>
                     </div>
                 </div>

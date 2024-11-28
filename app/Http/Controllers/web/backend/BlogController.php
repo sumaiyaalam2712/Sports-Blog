@@ -23,7 +23,7 @@ class BlogController extends Controller
         'headline'=>'required|min:4|max:200',
         'sub_headline'=>'required|min:4|max:200',
         'description'=>'required',
-        'image'=>'required|max:3072'],
+        'image'=>'required'],
         ['required'=>'Fill with valid information']
     );
 
@@ -34,13 +34,16 @@ class BlogController extends Controller
     $data->sub_headline=$request->sub_headline;
     $data->slug=Str::slug($request->headline);
     $data->description=$request->description;
-    $multiple=[];
+
+
+        $multiple=[];
 foreach($request->image as $value){
     $imageName = time().uniqid().'.'.$value->extension();
     $value->move(public_path('backend'), $imageName);
     $multiple[]=$imageName;
 }
 $data->image= implode(',' ,$multiple);
+
     $data->creation_period=Carbon::now();
     $data->save();
     //session()->flash('success','Form Submission is done');
@@ -82,7 +85,8 @@ $data->image= implode(',' ,$multiple);
         'news_type'=>'required|in:general,top,featured,transfer news|min:3',
         'headline'=>'required|min:4|max:200',
         'sub_headline'=>'required|min:4|max:200',
-        'description'=>'required'],
+        'description'=>'required',
+   ],
         ['required'=>'Fill with valid information']
     );
 
@@ -94,6 +98,16 @@ $data->image= implode(',' ,$multiple);
     $data->sub_headline=$request->sub_headline;
     $data->slug=Str::slug($request->headline);
     $data->description=$request->description;
+    if($request->file('image')){
+        $multiple=[];
+    foreach($request->image as $value){
+        $imageName = time().uniqid().'.'.$value->extension();
+        $value->move(public_path('backend'), $imageName);
+        $multiple[]=$imageName;
+    }
+    $data->image= implode(',' ,$multiple);
+        }
+
     $data->save();
 
     try {

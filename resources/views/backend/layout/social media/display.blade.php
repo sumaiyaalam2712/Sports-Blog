@@ -31,30 +31,11 @@
                             <tr>
 
 
-                                <td>{{ $data['sports_type'] }}</td>
-                                <td>{{ $data['team1_name'] }}</td>
-                                <td>{{ $data['team2_name'] }}</td>
-                                <td>{{ $data['team1_score'] }}</td>
-                                <td>{{ $data['team2_score'] }}</td>
 
-
-                                <td>
-
-
-                                    <img src="{{ asset('backend/' . $data['team1_logo']) }}" alt="Avatar"
-                                        class="rounded-circle" height="50px" width="50px" />
-
-                                </td>
-
-                                <td>
-
-
-                                    <img src="{{ asset('backend/' . $data['team2_logo']) }}" alt="Avatar"
-                                        class="rounded-circle" height="50px" width="50px" />
-
-                                </td>
-                                <td>{{ $data['winner'] }}</td>
-                                <td>{{ $data['play_date'] }}</td>
+                                <td> <img src="{{ asset('backend/' . $data['logo']) }}" alt="Avatar"
+                                class="rounded-circle" width="60px" height="50px" /></td>
+                                <td>{{ $data['name'] }}</td>
+                                <td>{{ $data['link'] }}</td>
 
                                 <td>
                                     <div class="dropdown">
@@ -63,10 +44,10 @@
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{{ route('score.edit', $data->id) }}"><i
+                                            <a class="dropdown-item" href="{{ route('social.media.edit', $data->id) }}"><i
                                                     class="bx bx-edit-alt me-1"></i>
                                                 Edit</a>
-                                            <a class="dropdown-item" href="{{ route('score.delete', $data->id) }}"><i class="bx bx-trash me-1"></i>
+                                            <a class="dropdown-item" href="{{ route('social.media.delete', $data->id) }}"><i class="bx bx-trash me-1"></i>
                                                 Delete</a>
                                         </div>
                                     </div>

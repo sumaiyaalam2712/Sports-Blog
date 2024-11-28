@@ -28,7 +28,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Name</label>
-                                <input type="text" class="form-control" id="basic-default-fullname" name="name"
+                                <input type="text" class="form-control" id="basic-default-fullname" name="name" value="{{ old('name') }}"
                                     placeholder="Name" />
                             </div>
                             @error('name')
@@ -47,8 +47,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Link</label>
-                                <input type="text" class="form-control" id="basic-default-fullname" name="link"
-                                    placeholder="Link" />
+                                <input type="text" class="form-control" id="basic-default-fullname" name="link" value="{{ old('link') }}"  placeholder="Link" />
                             </div>
                             @error('link')
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>

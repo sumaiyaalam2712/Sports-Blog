@@ -38,9 +38,12 @@ class AdminController extends Controller
      $data->password=Hash::make($request->password);
      $data->role=$request->role;
      $data->phone=$request->phone;
+     if($request->file('image'))
+     {
      $imageName = time().'.'.$request->photo->extension();
      $request->photo->move(public_path('backend'), $imageName);
      $data->photo= $imageName;
+     }
      $data->address=$request->address;
 
      $data->save();

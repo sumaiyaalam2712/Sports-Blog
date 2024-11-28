@@ -61,10 +61,10 @@ Route::get('/score/delete/{id}', [ScoreController::class,'delete'])->name('score
 Route::prefix('/dashboard/social')->middleware(['auth','isadmin'])->group(function(){
 Route::get('/create-social-media', [SocialMediaController::class,'index'])->name('social.media.index');
 Route::post('/create-social-media', [SocialMediaController::class,'create'])->name('social.media.create');
-Route::get('/socialmedia', [ScoreController::class,'display'])->name('social.media.display');
-Route::get('/socialmedia/edit/{id}', [ScoreController::class,'edit'])->name('social.media.edit');
-Route::post('/socialmedia/update', [ScoreController::class,'update'])->name('social.media.update');
-Route::get('/socialmedia/delete/{id}', [ScoreController::class,'delete'])->name('social.media.delete');
+Route::get('/socialmedia', [SocialMediaController::class,'display'])->name('social.media.display');
+Route::get('/socialmedia/edit/{id}', [SocialMediaController::class,'edit'])->name('social.media.edit');
+Route::post('/socialmedia/update', [SocialMediaController::class,'update'])->name('social.media.update');
+Route::get('/socialmedia/delete/{id}', [SocialMediaController::class,'delete'])->name('social.media.delete');
 });
 
 

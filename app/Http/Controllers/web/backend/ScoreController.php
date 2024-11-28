@@ -88,10 +88,10 @@ class ScoreController extends Controller
     $data->delete();
     try {
 
-        session()->flash('success', 'Form has been Updated successfully!');
+        session()->flash('success', 'Form has been deleted successfully!');
     } catch (\Exception $e) {
 
-        session()->flash('error', 'There was an error updating the form. Please try again.');
+        session()->flash('error', 'There was an error deleting the form. Please try again.');
     }
     return redirect()->back();
 
@@ -120,14 +120,16 @@ class ScoreController extends Controller
     $data->team1_score=$request->team1_score;
     $data->team2_score=$request->team2_score;
 
-    if($request->file('team1_logo')){
-    $team1logo = time().'.'.$request->team1_logo->extension();
+if($request->file('team1logo'))
+    {
+        $team1logo = time().'.'.$request->team1_logo->extension();
     $request->team1_logo->move(public_path('backend'), $team1logo);
     $data->team1_logo=$team1logo;
     }
 
-    if($request->file('team2_logo')){
-    $team2logo = time().'.'.$request->team2_logo->extension();
+    if($request->file('team2logo'))
+    {
+        $team2logo = time().'.'.$request->team2_logo->extension();
     $request->team2_logo->move(public_path('backend'), $team2logo);
     $data->team2_logo=$team2logo;
     }

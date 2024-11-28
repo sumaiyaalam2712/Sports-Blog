@@ -106,7 +106,7 @@
 
     </ul>
 </li>
-
++
 
 
 
@@ -125,10 +125,15 @@
                 <div data-i18n="Add Social Media Info">Add Social Media Info</div>
             </a>
         </li>
-
+        <li class="menu-item">
+            <a href="{{ route('social.media.display') }}" class="menu-link">
+                <div data-i18n="Display Social Media Info">Display Social Media Info</div>
+            </a>
+        </li>
 
 
     </ul>
+
 </li>
 
 

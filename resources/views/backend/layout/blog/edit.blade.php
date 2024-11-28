@@ -110,6 +110,19 @@
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
                             @enderror
 
+@php
+    $images=explode(',',$data->image)
+@endphp
+@foreach($images as $image)
+<div class="mb-3">
+    <label class="form-label" for="basic-default-fullname">Images</label>
+    <input type="file"
+class="form-control dropify"
+id="image"
+name="image"
+data-default-file="{{ asset('backend/' . $image) }}"  />
+</div>
+@endforeach
 
 
                             <button type="submit" class="btn btn-primary">POST</button>
