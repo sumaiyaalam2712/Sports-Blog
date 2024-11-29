@@ -6,16 +6,24 @@
         <section class="blog-details-section common-padding">
             <div class="blog-content-wrapper">
                 <div class="blog-header">
-                    <p class="blog-event"></p>
+                    <p class="blog-event">UnapologeticSports</p>
                     <h1>{{ $detail['headline'] }}
                     </h1>
+
                     <h2>{{ $detail['sub_headline'] }}</h2>
                     <div class="blog-author-time">
-                        <div class="blog-author">
-
-                        </div>
                         <div class="blog-post-time">
-                            <p>{{ $detail->creation_period }}</p>
+@php
+    $date=$detail->creation_period=\Carbon\Carbon::parse($detail->creation_period)->toTimeString();
+@endphp
+<p>{{ $date }}</p>
+
+</div>
+                        <div class="blog-post-time">
+                            @php
+                            $date=$detail->creation_period=\Carbon\Carbon::parse($detail->creation_period)->toFormattedDayDateString();
+                        @endphp
+                        <p>{{ $date }}</p>
                         </div>
                     </div>
                 </div>

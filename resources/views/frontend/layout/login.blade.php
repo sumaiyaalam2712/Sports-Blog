@@ -34,15 +34,18 @@
                         <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
                     @enderror
                     <button class="submit-btn" type="submit">Login</button>
+
+                    <p class="login-signup-remainder">
+                        Click “Sign in” to agree to Unpologeticsport’s Terms of
+                        Service and acknowledge that Unpologeticsport’s Privacy
+                        Policy applies to you.
+                    </p>
+
             </div>
             </form>
 
-            <p class="login-signup-remainder">
-                Click “Sign in” to agree to Unpologeticsport’s Terms of
-                Service and acknowledge that Unpologeticsport’s Privacy
-                Policy applies to you.
-            </p>
-            </div>
+
+      
         </section>
         <!-- log in section End -->
     </main>

@@ -16,9 +16,12 @@
                 <!-- first score card -->
                 @foreach ($scores as $score)
                     <div class="single-score-card item">
-                        <div class="score-time-venue">
+                        <div class="score-time-venue">f
                             <p>{{ $score['sports_type'] }}</p>
-                            <p>{{ $score['play_date'] }}</p>
+                            @php
+                            $date=$score->play_date=\Carbon\Carbon::parse($score->play_date)->format('d m y');
+                        @endphp
+                        <p>{{ $date }}</p>
                         </div>
                         <div class="score-card-result-wrapper">
                             <div class="team-one">
@@ -48,7 +51,11 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="score-time-venue">
+                            <p>winner</p>
                         <p>{{ $score['winner'] }}</p>
+                        </div>
+
                     </div>
                 @endforeach
                 <!-- second score card -->
@@ -149,9 +156,9 @@
                                     <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image">
                                 @endif
                             </div>
-                            <p class="event-name">NBA</p>
+                            <p class="event-name">Upapologetic Sports</p>
                             <h2 class="common-heading">
-                                {{ $top2['headline'] }}
+                             {{ \Illuminate\Support\Str::limit($top2['headline'], 100,'....') }}
                             </h2>
                         </a>
                     @endforeach
@@ -166,9 +173,9 @@
                                 <img src="{{ asset('backend/' . $top1_image[0]) }}" alt="">
                             </div>
                         @endforeach
-                        <p class="event-name">NBA</p>
+                        <p class="event-name">Unapologetic Sports</p>
                         <h2 class="common-heading common-heading-2">
-                            {{ $top1['headline'] }} 📝 </h2>
+                            {{ \Illuminate\Support\Str::limit($top1['headline'], 100,'....') }} 📝 </h2>
                     </a>
                 </div>
                 <div class="top-headline-last headline-box" data-aos="fade-left" data-aos-duration="1000">
@@ -183,7 +190,7 @@
                             @foreach ($tops as $top)
                                 <div class="top-headline">
                                     <a href="{{ route('blog.details.index', $top1->slug) }}" class="common-heading">
-                                        {{ $top['headline'] }}
+                                        {{ \Illuminate\Support\Str::limit($top['headline'], 100,'....') }}
                                     </a>
                                 </div>
                                 <div class="heading-gap-line"></div>
@@ -235,7 +242,7 @@
 
                                 <div class="headline-card-details">
                                     <h3 class="card-common-h3">
-                                        {{ $all_news['headline'] }}
+                                        {{ \Illuminate\Support\Str::limit($all_news['headline'], 100,'....') }}
                                     </h3>
                                     <p class="common-card-para">
                                         {!! $all_news['semi_headline'] !!}
@@ -274,7 +281,7 @@
                                             <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image">
                                         @endif
                                     </div>
-                                    <p>{{ $feature['headline'] }}</p>
+                                        <h3 style="color:white;">{{ \Illuminate\Support\Str::limit($feature['headline'], 100,'....') }}</h3>
                                 </a>
                         @endforeach
                     </div>
@@ -300,22 +307,22 @@
             <div class="transfer-news-content-wrapper">
                 <div class="transfer-video" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
                     <div class="transfer-video-thumb">
-                        <img src="{{ asset('frontend/assets/images/tranfer-video-thumb.png') }}" alt="" />
+                        @php
+                                        $images = explode(',', $transfer1->image);
+                                    @endphp
+
+                                        @if (isset($images[0]))
+                                            <img src="{{ asset('backend/' . $images[0]) }}" alt="Event Image">
+                                        @else
+                                            <img src="{{ asset('backend/Sports-News.jpg') }}" alt="Default Image">
+                                        @endif
+
+
                     </div>
-                    <a href="https://youtu.be/mhW5r-KOCP8?si=1JQWf99orltXGlv8" class="video-play">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="121" viewBox="0 0 120 121"
-                            fill="none">
-                            <path
-                                d="M106 60.5C106 85.9051 85.4051 106.5 60 106.5C34.5949 106.5 14 85.9051 14 60.5C14 35.0949 34.5949 14.5 60 14.5C85.4051 14.5 106 35.0949 106 60.5Z"
-                                fill="black" fill-opacity="0.4" stroke="white" stroke-width="8" />
-                            <path
-                                d="M45.5 60.5V53.1C45.5 43.55 52.25 39.7 60.5 44.45L66.9 48.15L73.3 51.85C81.55 56.6 81.55 64.4 73.3 69.15L66.9 72.85L60.5 76.55C52.25 81.3 45.5 77.4 45.5 67.9V60.5Z"
-                                fill="#E2E0E0" />
-                        </svg>
-                    </a>
+
                     <a href="{{ route('blog.details.index', $transfer1->slug) }}"
                         class="common-heading-2 common-heading tranfer-responsive-font">
-                        {{ $transfer1['headline'] }}
+                        {{ \Illuminate\Support\Str::limit($transfer1['headline'], 100,'....') }}
                     </a>
                 </div>
                 <div class="transfer-news-wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
@@ -337,7 +344,7 @@
                                     </div>
 
                                     <a href="{{ route('blog.details.index', $transfer2->slug) }}" class="common-heading">
-                                        {{ $transfer2['headline'] }}
+                                        {{ \Illuminate\Support\Str::limit($transfer2['headline'], 100,'....') }}
                                     </a>
                                 </a>
                                 <!-- tranfer content-2 -->
@@ -363,7 +370,7 @@
                                     </div>
 
                                     <a href="{{ route('blog.details.index', $transfer3->slug) }}" class="common-heading">
-                                        {{ $transfer3['headline'] }}
+                                        {{ \Illuminate\Support\Str::limit($transfer3['headline'], 100,'....') }}
                                     </a>
                                 </a>
                                 <!-- tranfer content-2 -->

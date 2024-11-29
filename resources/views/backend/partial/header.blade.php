@@ -11,11 +11,7 @@
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
         <div class="navbar-nav align-items-center">
-            <div class="nav-item d-flex align-items-center">
-                <i class="bx bx-search fs-4 lh-0"></i>
-                <input type="text" class="border-0 shadow-none form-control" placeholder="Search..."
-                    aria-label="Search..." />
-            </div>
+            
         </div>
         <!-- /Search -->
 
@@ -51,7 +47,7 @@
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>
-                    
+
                     <li>
                         <a class="dropdown-item" href="{{ route('profile.index') }}">
                             <i class="bx bx-cog me-2"></i>

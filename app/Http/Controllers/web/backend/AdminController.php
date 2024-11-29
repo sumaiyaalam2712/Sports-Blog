@@ -24,7 +24,8 @@ class AdminController extends Controller
      $request->validate(
          [
             'name'=>'required|string',
-            'role'=>'nullable|in:user,admin',
+            'email'=>'required|email',
+            'role'=>'in:user,admin',
          'phone'=>'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|unique:users,phone|min:10',
          'photo'=>'nullable||image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
          'address'=>'nullable',
@@ -47,10 +48,10 @@ class AdminController extends Controller
      $data->address=$request->address;
 
      $data->save();
-     //session()->flash('success','Form Submission is done');
+     //session()->flash('success','New Admin is Assigned successfully');
      try {
 
-         session()->flash('success', 'Form Submission is done successfully!');
+         session()->flash('success', 'New Admin is Assigned successfully!');
      } catch (\Exception $e) {
 
          session()->flash('error', 'There was an error submitting the form. Please try again.');

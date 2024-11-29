@@ -73,6 +73,8 @@ Route::get('/create-profile', [ProfileController::class,'index'])->name('profile
 Route::post('/create-profile', [ProfileController::class,'create'])->name('profile.create');
 Route::get('/create-admin', [AdminController::class,'index'])->name('admin.index');
 Route::post('/create-admin', [AdminController::class,'create'])->name('admin.create');
+
+Route::get('/users', [AdminController::class,'display'])->name('admin.display');
 });
 
 

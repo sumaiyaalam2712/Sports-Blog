@@ -19,134 +19,45 @@
                                     <a href="{{ route('blog.display') }}" class="btn btn-sm btn-outline-primary">View Sports Blogs</a>
                                 </div>
                             </div>
-                            <div class="text-center col-sm-5 text-sm-left">
-                                <div class="px-0 pb-0 card-body px-md-4">
-
-                                </div>
-                            </div>
+                       
                         </div>
                     </div>
                 </div>
-                <div class="order-1 col-lg-4 col-md-4">
-                    <div class="row">
-                        <div class="mb-4 col-lg-6 col-md-12 col-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="flex-shrink-0 avatar">
-                                            <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="p-0 btn" type="button" id="cardOpt3" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="mb-1 fw-semibold d-block">Users</span>
-                                    <h3 class="mb-2 card-title">{{ $user }}</h3>
-                                    <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        total</small>
-                                </div>
+                <div class="mb-4 col-lg-6 col-md-12 col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+
+
                             </div>
-                        </div>
-                        <div class="mb-4 col-lg-6 col-md-12 col-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="flex-shrink-0 avatar">
-                                            <img src="../assets/img/icons/unicons/wallet-info.png" alt="Credit Card"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="p-0 btn" type="button" id="cardOpt6" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span>Subscribers</span>
-                                    <h3 class="mb-1 card-title text-nowrap">400</h3>
-                                    <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        total</small>
-                                </div>
-                            </div>
+                            <span class="mb-1 fw-semibold d-block">Users</span>
+                            <h3 class="mb-2 card-title">{{ $user }}</h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
+                                total</small>
                         </div>
                     </div>
                 </div>
-                <!-- Total Revenue -->
+                <div class="mb-4 col-lg-6 col-md-12 col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
 
-                <!--/ Total Revenue -->
-                <div class="order-3 col-12 col-md-8 col-lg-4 order-md-2">
-                    <div class="row">
-                        <div class="mb-4 col-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="flex-shrink-0 avatar">
-                                            <img src="../assets/img/icons/unicons/paypal.png" alt="Credit Card"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="p-0 btn" type="button" id="cardOpt4" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
-                                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="mb-1 d-block">Payments</span>
-                                    <h3 class="mb-2 card-title text-nowrap">$2,456</h3>
-                                    <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i>
-                                        -14.82%</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-4 col-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="flex-shrink-0 avatar">
-                                            <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="p-0 btn" type="button" id="cardOpt1"
-                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="mb-1 fw-semibold d-block">Transactions</span>
-                                    <h3 class="mb-2 card-title">$14,857</h3>
-                                    <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        +28.14%</small>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- </div>
-                <div class="row"> -->
 
+                            </div>
+                            <span>Subscribers</span>
+                            <h3 class="mb-1 card-title text-nowrap">400</h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
+                                total</small>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+
+                <!-- Total Revenue -->
+
+                <!--/ Total Revenue -->
+
+
                 <!-- Order Statistics -->
 
                 <!--/ Order Statistics -->
@@ -156,6 +67,7 @@
                 <!--/ Expense Overview -->
 
                 <!-- Transactions -->
+                <div class="row">
                 <div class="order-2 mb-4 col-md-6 col-lg-4">
                     <div class="card h-100">
                         <div class="card-header d-flex align-items-center justify-content-between">
@@ -166,9 +78,8 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                                    <a class="dropdown-item" href="javascript:void(0);"></a>
-                                    <a class="dropdown-item" href="javascript:void(0);"></a>
-                                    <a class="dropdown-item" href="javascript:void(0);"></a>
+                                    <a class="dropdown-item" href="{{ route('home.index') }}">Home Page</a>
+
                                 </div>
                             </div>
                         </div>
@@ -233,26 +144,22 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
-                                    <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                    <a class="dropdown-item" href="javascript:void(0);"></a>
+                                    <a class="dropdown-item" href="javascript:void(0);"></a>
+                                    <a class="dropdown-item" href="javascript:void(0);"></a>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="mb-3 d-flex justify-content-between align-items-center">
                                 <div class="gap-1 d-flex flex-column align-items-center">
-                                    <h2 class="mb-2">8,258</h2>
-                                    <span>Total Orders</span>
+                                    <h2 class="mb-2">400</h2>
+                                    <span>Total Subscribers</span>
                                 </div>
-                                <div id="orderStatisticsChart"></div>
-                            </div>
+
                             <ul class="p-0 m-0">
                                 <li class="pb-1 mb-4 d-flex">
-                                    <div class="flex-shrink-0 avatar me-3">
-                                        <span class="rounded avatar-initial bg-label-primary"><i
-                                                class="bx bx-mobile-alt"></i></span>
-                                    </div>
+
                                     <div class="flex-wrap gap-2 d-flex w-100 align-items-center justify-content-between">
                                         <div class="me-2">
                                             <h6 class="mb-0">General News</h6>
@@ -264,47 +171,38 @@
                                     </div>
                                 </li>
                                 <li class="pb-1 mb-4 d-flex">
-                                    <div class="flex-shrink-0 avatar me-3">
-                                        <span class="rounded avatar-initial bg-label-success"><i
-                                                class="bx bx-closet"></i></span>
-                                    </div>
+
                                     <div class="flex-wrap gap-2 d-flex w-100 align-items-center justify-content-between">
                                         <div class="me-2">
-                                            <h6 class="mb-0">Fashion</h6>
-                                            <small class="text-muted">T-shirt, Jeans, Shoes</small>
+                                            <h6 class="mb-0">Top Headings</h6>
+                                            <small class="text-muted">Top headlines</small>
                                         </div>
                                         <div class="user-progress">
-                                            <small class="fw-semibold">23.8k</small>
+                                            <small class="fw-semibold">total {{ $top }}</small>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="pb-1 mb-4 d-flex">
-                                    <div class="flex-shrink-0 avatar me-3">
-                                        <span class="rounded avatar-initial bg-label-info"><i
-                                                class="bx bx-home-alt"></i></span>
-                                    </div>
+
                                     <div class="flex-wrap gap-2 d-flex w-100 align-items-center justify-content-between">
                                         <div class="me-2">
-                                            <h6 class="mb-0">Decor</h6>
-                                            <small class="text-muted">Fine Art, Dining</small>
+                                            <h6 class="mb-0">Transfer News</h6>
+                                            <small class="text-muted">Transfer related news</small>
                                         </div>
                                         <div class="user-progress">
-                                            <small class="fw-semibold">849k</small>
+                                            <small class="fw-semibold">total {{ $transfer }}</small>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="d-flex">
-                                    <div class="flex-shrink-0 avatar me-3">
-                                        <span class="rounded avatar-initial bg-label-secondary"><i
-                                                class="bx bx-football"></i></span>
-                                    </div>
+
                                     <div class="flex-wrap gap-2 d-flex w-100 align-items-center justify-content-between">
                                         <div class="me-2">
-                                            <h6 class="mb-0">Sports</h6>
-                                            <small class="text-muted">Football, Cricket Kit</small>
+                                            <h6 class="mb-0">Featured</h6>
+                                            <small class="text-muted">Featured Match Highlights</small>
                                         </div>
                                         <div class="user-progress">
-                                            <small class="fw-semibold">99</small>
+                                            <small class="fw-semibold">total {{ $featured }}</small>
                                         </div>
                                     </div>
                                 </li>
@@ -314,5 +212,7 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
         <!-- / Content -->
     @endsection

@@ -105,7 +105,8 @@ class ScoreController extends Controller
         'team2_name'=>'required|string|min:3|max:30',
         'team1_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
         'team2_score'=>'required|regex:/^[+-]?\d+(\.\d+)?$/',
-
+'team1_logo'=>'image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
+'team2_logo'=>'image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
         'winner'=>'required|string|min:3|max:30',
         'play_date'=>'required|date'],
         ['required'=>'Fill with valid information']
@@ -141,7 +142,7 @@ if($request->file('team1logo'))
         session()->flash('success', 'Form has been updated  successfully!');
     } catch (\Exception $e) {
 
-        session()->flash('error', 'There was an error submitting the form. Please try again.');
+        session()->flash('error', 'There was an error updating the form. Please try again.');
     }
     return redirect()->back();
 

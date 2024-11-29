@@ -21,11 +21,12 @@ class ProfileController extends Controller
     {
      $request->validate(
          [
-            'name'=>'required|string',
-
+            'name'=>'required|string|max:200',
+'email'=>'required|email',
          'phone'=>'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|unique:users,phone|min:10',
          'photo'=>'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg,bmp|max:3072',
-         'address'=>'nullable'],
+         'address'=>'nullable'
+        ],
          ['required'=>'Fill with valid information']
      );
 
@@ -35,9 +36,10 @@ class ProfileController extends Controller
 
      $data->phone=$request->phone;
 
-     $imageName = time().'.'.$request->photo->extension();
+
      if($request->file('photo'))
      {
+        $imageName = time().'.'.$request->photo->extension();
         $request->photo->move(public_path('backend'), $imageName);
 
      $data->photo= $imageName;
@@ -45,13 +47,13 @@ class ProfileController extends Controller
      $data->address=$request->address;
 
      $data->save();
-     //session()->flash('success','Form Submission is done');
+
      try {
 
-         session()->flash('success', 'Form Submission is done successfully!');
+         session()->flash('success', 'Your Profile has been updated successfully');
      } catch (\Exception $e) {
 
-         session()->flash('error', 'There was an error submitting the form. Please try again.');
+         session()->flash('error', 'There was an error updating the form. Please try again.');
      }
      return redirect('/dashboard');
 

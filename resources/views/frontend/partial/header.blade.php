@@ -71,12 +71,13 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
-                                <a href="{{ route('register') }}">Sign Up</a>
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
                             @else
                                 <!-- If not logged in, show Log In and Sign Up links -->
                                 <a href="{{ route('login') }}">Log In</a>
                                 <div class="line-div"></div>
                                 <a href="{{ route('register') }}">Sign Up</a>
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
                             @endauth
                         </div>
                     </div>

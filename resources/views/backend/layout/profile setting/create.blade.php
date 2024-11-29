@@ -18,7 +18,7 @@
             <div class="col-xl">
                 <div class="mb-4 card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Profile Setting</h5>
+                        <h5 class="mb-0">Admin Profile Setting</h5>
                         <small class="text-muted float-end">Profile</small>
                     </div>
                     <div class="card-body">
@@ -50,7 +50,7 @@
 
 
 
-                            
+
 
 
                             <div class="mb-3">
@@ -83,23 +83,9 @@
                                 <strong><span style="color:darkslateblue">{{ $message }}</span></strong>
                             @enderror
 
-                            <div class="mb-3">
-                                <label class="form-label" for="basic-default-fullname">Subscription Status</label>
-                                <select class="form-select" name="subscription_status" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    <option value="active">active</option>
-                                    <option value="end ">end </option>
-                                    <option value="cancelled">cancelled</option>
-                                    <option value="inactive ">inactive </option>
-                                </select>
-                                @error('subscription_status')
-                                    <div class="invalid-feedback" style="color:darkslateblue,font-weight:bold;">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
 
-                            <button type="submit" class="btn btn-primary">POST</button>
+
+                            <button type="submit" class="btn btn-primary">UPDATE</button>
                         </form>
                     </div>
                 </div>
