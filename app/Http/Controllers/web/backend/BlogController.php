@@ -130,13 +130,7 @@ return redirect()->back();
 
     $data=Blog::find($id);
     $data->delete();
-    try {
-
-        session()->flash('success', 'Form has been Updated successfully!');
-    } catch (\Exception $e) {
-
-        session()->flash('error', 'There was an error updating the form. Please try again.');
-    }
+    session()->flash('success','Deleted succesefully');
     return redirect()->back();
 
    }

@@ -74,7 +74,10 @@ Route::post('/create-profile', [ProfileController::class,'create'])->name('profi
 Route::get('/create-admin', [AdminController::class,'index'])->name('admin.index');
 Route::post('/create-admin', [AdminController::class,'create'])->name('admin.create');
 
-Route::get('/users', [AdminController::class,'display'])->name('admin.display');
+Route::get('/user', [AdminController::class,'display'])->name('user.display');
+Route::get('/user/edit/{id}', [AdminController::class,'edit'])->name('user.edit');
+Route::post('/user/update', [AdminController::class,'update'])->name('user.update');
+Route::get('{id}', [AdminController::class,'delete'])->name('user.delete');
 });
 
 

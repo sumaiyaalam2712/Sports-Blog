@@ -69,13 +69,8 @@ public function display()
 
     $data=SocialMedia::find($id);
     $data->delete();
-    try {
 
-        session()->flash('success', 'Form has been deleted successfully!');
-    } catch (\Exception $e) {
-
-        session()->flash('error', 'There was an error deleting the form. Please try again.');
-    }
+    session()->flash('success','Deleted succesefully');
     return redirect()->back();
 
    }

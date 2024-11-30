@@ -2,9 +2,7 @@
 @push('scripts')
 <style>
 
-    .container{
-        margin:20px;
-    }
+  
 </style>
 @endpush
 @section('content')

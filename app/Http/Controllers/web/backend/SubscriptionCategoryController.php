@@ -178,12 +178,12 @@ session()->flash('success', 'The package values are not matching with each other
             $data->rate=$request->rate;
             $data->package_saving=$request->package_saving;
             $data->save();
-            session()->flash('success', 'Form Submission is done successfully!');
+            session()->flash('success', 'Form has been updated  successfully!');
         }
         elseif($request->package_name=='Monthly' && !$request->package_category=='Month' && !$request->package_duration==30)
         {
 
-        session()->flash('success', 'Form has been updated  successfully!');
+        session()->flash('success', 'The package values are not matching with each other');
         }
 
 
@@ -199,12 +199,12 @@ session()->flash('success', 'The package values are not matching with each other
     $data->rate=$request->rate;
     $data->package_saving=$request->package_saving;
     $data->save();
-    session()->flash('success', 'Form Submission is done successfully!');
+    session()->flash('success', 'Form has been updated  successfully!');
 }
 elseif($request->package_name=='For 3 Months' && !$request->package_category=='3 Months' && !$request->package_duration==90)
 {
 
-session()->flash('success', 'Form has been updated  successfully!');
+session()->flash('success', 'The package values are not matching with each other');
 }
 
 
@@ -220,13 +220,13 @@ if($request->package_name=='For 6 Months' && $request->package_category=='6 Mont
     $data->rate=$request->rate;
     $data->package_saving=$request->package_saving;
     $data->save();
-    session()->flash('success', 'Form Submission is done successfully!');
+    session()->flash('success', 'Form has been updated  successfully!');
 
 }
 elseif($request->package_name=='For 6 Months' && !$request->package_category=='6 Months' && !$request->package_duration==180)
 {
 
-session()->flash('success', 'Form has been updated  successfully!');
+session()->flash('success', 'The package values are not matching with each other');
 }
 
 
@@ -260,13 +260,10 @@ session()->flash('success', 'The package values are not matching with each other
 
     $data=SubscriptionCategory::find($id);
     $data->delete();
-    try {
 
-        session()->flash('success', 'Form has been deleted successfully!');
-    } catch (\Exception $e) {
 
-        session()->flash('error', 'There was an error deleting the form. Please try again.');
-    }
+        session()->flash('success', 'Deleted successfully!');
+
     return redirect()->back();
 
    }
