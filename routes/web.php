@@ -97,6 +97,16 @@ Route::get('/subscription/delete/{id}', [SubscriptionCategoryController::class,'
 
 
 
+Route::prefix('/dashboard/system-settingsystem.setting')->middleware(['auth','isadmin'])->group(function(){
+    Route::get('/create-subscription-category', [SubscriptionCategoryController::class,'index'])->name('system.setting.index');
+    Route::post('/create-subscription-category', [SubscriptionCategoryController::class,'create'])->name('system.setting.create');
+    Route::get('/subscription', [SubscriptionCategoryController::class,'display'])->name('system.setting.display');
+    Route::get('/subscription/edit/{id}', [SubscriptionCategoryController::class,'edit'])->name('system.settingedit');
+    Route::post('/subscription/update', [SubscriptionCategoryController::class,'update'])->name('system.setting.update');
+    Route::get('/subscription/delete/{id}', [SubscriptionCategoryController::class,'delete'])->name('system.setting.delete');
+    });
+
+
 
 
 

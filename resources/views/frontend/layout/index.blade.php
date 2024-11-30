@@ -16,7 +16,7 @@
                 <!-- first score card -->
                 @foreach ($scores as $score)
                     <div class="single-score-card item">
-                        <div class="score-time-venue">f
+                        <div class="score-time-venue">
                             <p>{{ $score['sports_type'] }}</p>
                             @php
                             $date=$score->play_date=\Carbon\Carbon::parse($score->play_date)->format('d m y');
